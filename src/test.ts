@@ -3,3 +3,5 @@ export function someFn(arg: number): string {
 
     return ''
 }
+
+document.body.innerHTML = `<div style='background: blue; color: white'>Hello World!</div>`
