@@ -3,6 +3,7 @@ import styles from './sidebar.module.scss';
 import {useState} from "react";
 import {Button} from "@/shared/ui/button";
 import {ThemeSwitcher} from "@/widgets/theme-switcher";
+import { LangSwitcher } from "@/widgets/lang-switcher";
 
 interface SidebarProps {
     className?: string;
@@ -22,7 +23,7 @@ export const Sidebar = ({className}: SidebarProps) => {
             <Button onClick={onToggle}>Скрыть</Button>
             <div className={styles.switchers}>
                 <ThemeSwitcher/>
-                {/*<LangSwitcher/>*/}
+                <LangSwitcher/>
             </div>
         </aside>
     );
