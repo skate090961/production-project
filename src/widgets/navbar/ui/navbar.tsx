@@ -35,7 +35,6 @@ export const Navbar = ({ className }: NavbarProps) => {
             className={classNames(styles.root, [className])}
             aria-label="Основная навигация"
         >
-            <ThemeSwitcher />
             <ul className={styles.links}>
                 {navItems.map(renderNavItem)}
             </ul>
