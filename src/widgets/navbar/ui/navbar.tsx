@@ -1,8 +1,8 @@
-import {classNames} from "@/shared/lib/class-names/class-names";
+import { AppRoutes, RoutePath } from '@/shared/config/route/route-config';
+import { classNames } from '@/shared/lib/class-names/class-names';
+import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';
+
 import styles from './navbar.module.scss';
-import {AppLink, AppLinkTheme} from "@/shared/ui/app-link/app-link";
-import {AppRoutes, RoutePath} from "@/shared/config/route/route-config";
-import {ThemeSwitcher} from "@/widgets/theme-switcher";
 
 interface NavbarProps {
     className?: string;
@@ -41,4 +41,3 @@ export const Navbar = ({ className }: NavbarProps) => {
         </nav>
     );
 };
-
