@@ -3,6 +3,18 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BuildOptions} from "./types/config";
 
 export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
+    const babelLoader = {
+        test: /\.[jt]sx?$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+                plugins: [isDev && 'react-refresh/babel'].filter(Boolean)
+            }
+        }
+    }
+
     const fileLoader = {
         test: /\.(png|jpg|gif|woff|woff2)$/,
         use: 'file-loader'
@@ -41,6 +53,7 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
     }
 
     return [
+        babelLoader,
         tscLoader,
         styleLoader,
         svgLoader,
