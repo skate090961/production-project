@@ -2,8 +2,7 @@ import { Theme, useTheme } from '@/app/providers/theme';
 import MoonIcon from '@/shared/assets/icons/moon.svg';
 import SunIcon from '@/shared/assets/icons/sun.svg';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { Button } from '@/shared/ui/button';
-import { ThemeButton } from '@/shared/ui/button/ui/button';
+import { Button, ThemeButton } from '@/shared/ui/button/button';
 
 import styles from './theme-switcher.module.scss';
 

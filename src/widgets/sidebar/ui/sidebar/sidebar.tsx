@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { Button } from '@/shared/ui/button';
+import { Button } from '@/shared/ui/button/button';
 import { LangSwitcher } from '@/widgets/lang-switcher';
 import { ThemeSwitcher } from '@/widgets/theme-switcher';
 
@@ -22,8 +22,14 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <aside
             className={classNames(styles.root, [className], { [styles.collapsed]: isCollapsed })}
             aria-label="Боковая панель"
+            data-testid="sidebar"
         >
-            <Button onClick={onToggle}>Скрыть</Button>
+            <Button
+                data-testid="sidebar-toggle"
+                onClick={onToggle}
+            >
+                Скрыть
+            </Button>
             <div className={styles.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher />

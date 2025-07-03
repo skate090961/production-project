@@ -10,7 +10,6 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
         use: {
             loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env'],
                 plugins: [isDev && 'react-refresh/babel'].filter(Boolean),
             },
         },
@@ -26,7 +25,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
-    const tscLoader = {
+    const tsLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
@@ -55,7 +54,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 
     return [
         babelLoader,
-        tscLoader,
+        tsLoader,
         styleLoader,
         svgLoader,
         fileLoader,
