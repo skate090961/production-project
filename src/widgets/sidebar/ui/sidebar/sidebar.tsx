@@ -24,12 +24,12 @@ export const Sidebar = ({ className }: SidebarProps) => {
             aria-label="Боковая панель"
             data-testid="sidebar"
         >
-            <Button
-                data-testid="sidebar-toggle"
-                onClick={onToggle}
-            >
-                Скрыть
-            </Button>
+            {/* <Button */}
+            {/*    data-testid="sidebar-toggle" */}
+            {/*    onClick={onToggle} */}
+            {/* > */}
+            {/*    Скрыть */}
+            {/* </Button> */}
             <div className={styles.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher />
