@@ -1,5 +1,3 @@
-import path from 'path';
-
 export default {
     clearMocks: true,
     testEnvironment: 'jsdom',
