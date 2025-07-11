@@ -23,12 +23,12 @@ export const componentRender = (
     } = options;
 
     return render(
-        <StoreProvider initState={initState}>
-            <MemoryRouter initialEntries={[route]}>
+        <MemoryRouter initialEntries={[route]}>
+            <StoreProvider initState={initState}>
                 <I18nextProvider i18n={i18nForTests}>
                     {component}
                 </I18nextProvider>
-            </MemoryRouter>
-        </StoreProvider>,
+            </StoreProvider>
+        </MemoryRouter>,
     );
 };
