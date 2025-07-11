@@ -48,7 +48,7 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['aria-label', 'aria-role', 'aria-placeholder', 'data-testid'],
+                ignoreAttribute: ['aria-label', 'aria-role', 'aria-placeholder', 'data-testid', 'name'],
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
