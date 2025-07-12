@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -13,7 +13,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     const { t } = useTranslation();
     const dispatch = useDispatch();
@@ -27,9 +27,9 @@ export const Navbar = ({ className }: NavbarProps) => {
         setIsAuthModal(false);
     }, []);
 
-    const onLogout = () => {
+    const onLogout = useCallback(() => {
         dispatch(userActions.logout());
-    };
+    }, [dispatch]);
 
     if (authData) {
         return (
@@ -64,4 +64,4 @@ export const Navbar = ({ className }: NavbarProps) => {
             />
         </div>
     );
-};
+});
