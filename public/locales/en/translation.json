@@ -14,5 +14,6 @@
   "Введите username": "Enter username",
   "Введите пароль": "Enter password",
   "Форма авторизации": "Login form",
-  "Выйти": "Logout"
+  "Выйти": "Logout",
+  "Профиль": "Profile"
 }

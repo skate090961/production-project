@@ -38,31 +38,6 @@
     align-items: center;
 }
 
-.link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    svg {
-        fill: var(--inverted-primary-color);
-    }
-}
-
-.linkText {
-    opacity: 1;
-    white-space: nowrap;
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
-
-    .link {
-        gap: 0;
-    }
-
-    .linkText {
-        opacity: 0;
-        transition: 0.3s opacity;
-        width: 0;
-    }
 }

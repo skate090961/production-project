@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
@@ -11,4 +11,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default memo(About);
