@@ -1,7 +1,9 @@
+export type Mods = Record<string, boolean | undefined>
+
 export function classNames(
     mainClass: string,
-    additionalClasses: string[] = [],
-    modifiers: Record<string, boolean> = {},
+    additionalClasses: Array<string | undefined> = [],
+    modifiers: Mods = {},
 ): string {
     const activeModifiers = Object.entries(modifiers)
         .filter(([_, isActive]) => Boolean(isActive))

@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 
 import CloseIcon from '@/shared/assets/icons/close.svg';
-import { classNames } from '@/shared/lib/class-names/class-names';
+import { classNames, Mods } from '@/shared/lib/class-names/class-names';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { Portal } from '@/shared/ui/portal/portal';
 
@@ -12,7 +12,7 @@ import styles from './modal.module.scss';
 interface ModalProps {
     className?: string;
     isOpen: boolean;
-    onClose: () => void;
+    onClose?: () => void;
     isLazy?: boolean;
 }
 
@@ -28,7 +28,7 @@ export const Modal: FC<ModalProps> = ({
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -65,7 +65,9 @@ export const Modal: FC<ModalProps> = ({
     useEffect(() => {
         if (isClosing) {
             timerRef.current = setTimeout(() => {
-                onClose();
+                if (onClose) {
+                    onClose();
+                }
                 setIsClosing(false);
             }, ANIMATION_DELAY);
         }
@@ -77,7 +79,7 @@ export const Modal: FC<ModalProps> = ({
         };
     }, [isClosing, onClose]);
 
-    const mods = {
+    const mods: Mods = {
         [styles.opened]: isOpen,
         [styles.closed]: isClosing,
     };
