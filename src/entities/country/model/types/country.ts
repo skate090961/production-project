@@ -5,11 +5,3 @@ export enum Country {
     Japan = 'Japan',
     Brazil = 'Brazil'
 }
-
-export enum Currency {
-    RUB = 'RUB',
-    USD = 'USD',
-    EUR = 'EUR',
-    JPY = 'JPY',
-    BRL = 'BRL'
-}

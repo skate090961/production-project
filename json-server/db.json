@@ -31,13 +31,13 @@
     }
   ],
   "profile": {
-    "firstname": "Максим",
-    "lastname": "Александров",
-    "age": 28,
+    "city": "Samara123",
+    "firstname": "Максим123",
+    "lastname": "Александров123",
+    "age": 28123,
+    "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5d/5d860bf9d0aafde4b7f0b432ca13c91c89c0998b_full.jpg",
     "currency": "RUB",
     "country": "Russia",
-    "city": "Samara",
-    "username": "admin",
-    "avatar": "https://avatars.steamstatic.com/b5756a0a8858bf5c80328ca6d541091e6791afdd_full.jpg"
+    "username": "admin123"
   }
 }

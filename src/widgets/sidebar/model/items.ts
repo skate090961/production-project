@@ -9,6 +9,7 @@ export interface SidebarItemType {
     path: string;
     translationKey: string;
     Icon: VFC<SVGProps<SVGSVGElement>>;
+    authOnly: boolean;
 }
 
 export const sidebarItemList: SidebarItemType[] = [
@@ -16,15 +17,18 @@ export const sidebarItemList: SidebarItemType[] = [
         path: RoutePath[AppRoutes.MAIN],
         translationKey: 'Главная',
         Icon: HomeIcon,
+        authOnly: false,
     },
     {
         path: RoutePath[AppRoutes.ABOUT],
         translationKey: 'О сайте',
         Icon: TeamIcon,
+        authOnly: false,
     },
     {
         path: RoutePath[AppRoutes.PROFILE],
         translationKey: 'Профиль',
         Icon: UserIcon,
+        authOnly: true,
     },
 ];

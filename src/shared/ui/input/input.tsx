@@ -6,10 +6,10 @@ import { classNames } from '@/shared/lib/class-names/class-names';
 
 import styles from './input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'autoFocus'>
 
 interface InputProps extends HTMLInputProps{
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     autofocus?: boolean;
 }
@@ -22,6 +22,7 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         placeholder,
         autofocus,
+        readOnly,
         ...otherPorps
     } = props;
 
@@ -56,7 +57,7 @@ export const Input = memo((props: InputProps) => {
     };
 
     return (
-        <div className={classNames(styles.root, [className])}>
+        <div className={classNames(styles.root, [className], { [styles.readonly]: readOnly })}>
             {placeholder && (
                 <div>
                     {`${placeholder}>`}
