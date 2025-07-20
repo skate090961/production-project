@@ -15,5 +15,7 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Login form",
   "Выйти": "Logout",
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "Валюта": "Currency",
+  "Страна": "Country"
 }

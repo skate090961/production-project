@@ -1,0 +1,18 @@
+{
+  "Профиль": "Profile",
+  "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Ошибка сервера": "Server error",
+  "Данные отсутствуют": "No data available",
+  "Имя и Фамилия обязательны": "First and last name are required",
+  "Некорректный возраст": "Invalid age",
+  "Произошла ошибка при загрузке профиля": "Error loading profile",
+  "Попробуйте обновить страницу": "Try refreshing the page",
+  "Имя": "First name",
+  "Фамилия": "Last name",
+  "Город": "City",
+  "Возраст": "Age",
+  "Имя пользователя": "Username",
+  "Cсылка на аватар": "Avatar link"
+}

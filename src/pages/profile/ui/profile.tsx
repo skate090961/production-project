@@ -1,4 +1,5 @@
 import React, { memo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { Country } from '@/entities/country';
@@ -9,12 +10,15 @@ import {
     getProfileForm,
     getProfileIsLoading,
     getProfilerReadonly,
+    getProfileValidateErrors,
     profileActions,
     ProfileCard,
     profileReducer,
+    ValidateProfileError,
 } from '@/entities/profile';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Text, TextTheme } from '@/shared/ui/text/text';
 
 import { ProfilePageHeader } from './profile-page-header/profile-page-header';
 
@@ -23,11 +27,21 @@ const initReducers: ReducerList = {
 };
 
 const Profile = () => {
+    const { t } = useTranslation('profile');
+
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfilerReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslate = {
+        [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера'),
+        [ValidateProfileError.NO_DATA]: t('Данные отсутствуют'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и Фамилия обязательны'),
+        [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
+    };
 
     useEffect(() => {
         dispatch(fetchProfileData());
@@ -46,9 +60,7 @@ const Profile = () => {
     }, [dispatch]);
 
     const onChangeAge = useCallback((value: string) => {
-        if (value === '' || value === '0' || /^[1-9]\d*$/.test(value)) {
-            dispatch(profileActions.updateForm({ age: Number(value) || 0 }));
-        }
+        dispatch(profileActions.updateForm({ age: Number(value) || 0 }));
     }, [dispatch]);
 
     const onChangeUsername = useCallback((value: string) => {
@@ -73,6 +85,13 @@ const Profile = () => {
             removeAfterUnmount
         >
             <ProfilePageHeader />
+            {validateErrors?.map((e) => (
+                <Text
+                    key={e}
+                    theme={TextTheme.ERROR}
+                    text={validateErrorTranslate[e]}
+                />
+            ))}
             <ProfileCard
                 data={formData}
                 isLoading={isLoading}
