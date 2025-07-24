@@ -4,7 +4,6 @@ import {
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 
-import { AppDispatch } from '@/app/providers/store-provider';
 import { ProfileSchema } from '@/entities/profile';
 import { UserSchema } from '@/entities/user';
 import { LoginSchema } from '@/features/auth-by-username';
