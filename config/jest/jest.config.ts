@@ -2,6 +2,7 @@ export default {
     globals: {
         __IS_DEV__: true,
         __API__: '',
+        __PROJECT__: 'jest',
     },
     clearMocks: true,
     testEnvironment: 'jsdom',
@@ -21,7 +22,7 @@ export default {
     ],
     rootDir: '../../',
     moduleNameMapper: {
-        '\\.svg$': '<rootDir>config/jest/jest-empty-component.tsx',
+        '\\.(svg|png|jpe?g)$': '<rootDir>config/jest/jest-empty-component.tsx',
         '^.+\\.s?css$': 'identity-obj-proxy',
         // last mapper
         '^@/(.*)$': '<rootDir>src/$1',

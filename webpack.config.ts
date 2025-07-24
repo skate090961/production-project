@@ -2,7 +2,11 @@ import path from 'path';
 import { Configuration } from 'webpack';
 
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
-import { BuildEnv, BuildMode, BuildPaths } from './config/build/types/config';
+import {
+    BuildEnv,
+    BuildMode,
+    BuildPaths,
+} from './config/build/types/config';
 
 export default (env: BuildEnv): Configuration => {
     const paths: BuildPaths = {
@@ -24,5 +28,6 @@ export default (env: BuildEnv): Configuration => {
         isDev,
         port: PORT,
         apiUrl,
+        project: 'frontend',
     });
 };
