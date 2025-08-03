@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 
 import { Country, CountrySelect } from '@/entities/country';
 import { Currency, CurrencySelect } from '@/entities/currency';
-import AvatarIcon from '@/shared/assets/images/avatar.png';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { Avatar } from '@/shared/ui/avatar/avatar';
 import { Input } from '@/shared/ui/input/input';
@@ -74,7 +73,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
             <div className={styles.data}>
                 <div className={styles.avatarWrapper}>
                     <Avatar
-                        src={data?.avatar || AvatarIcon}
+                        src={data?.avatar}
                     />
                 </div>
                 <Input

@@ -1,7 +1,7 @@
 import { RouteProps } from 'react-router-dom';
 
 import { About } from '@/pages/about';
-import { ArticleDetails } from '@/pages/article-datails';
+import { ArticleDetails } from '@/pages/article-details';
 import { Articles } from '@/pages/articles';
 import { Main } from '@/pages/main';
 import { NotFoundPage } from '@/pages/not-found-page';
