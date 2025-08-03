@@ -1,0 +1,28 @@
+.root {
+    min-height: 100%;
+}
+
+.avatar {
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    svg {
+        fill: var(--secondary-color);
+    }
+}
+
+.info {
+    display: flex;
+    gap: 1rem;
+}
+
+.blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

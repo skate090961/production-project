@@ -4,6 +4,7 @@ import React, {
 
 import CloseIcon from '@/shared/assets/icons/close.svg';
 import { classNames, Mods } from '@/shared/lib/class-names/class-names';
+import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { Portal } from '@/shared/ui/portal/portal';
 
@@ -99,7 +100,7 @@ export const Modal: FC<ModalProps> = ({
                                 onClick={closeHandler}
                                 aria-label="Закрыть модальное окно"
                             >
-                                <CloseIcon />
+                                <AppIcon Svg={CloseIcon} />
                             </Button>
                         </div>
                         <div className={styles.content}>

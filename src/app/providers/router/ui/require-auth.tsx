@@ -8,7 +8,6 @@ import { RoutePath } from '@/shared/config/route/route-config';
 export const RequireAuth = ({ children }: {children: ReactElement}): ReactElement => {
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
-    console.log('auth', auth);
 
     if (!auth) {
         return (

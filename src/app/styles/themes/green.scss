@@ -1,8 +1,15 @@
 .app_green_theme {
-    --bg-color: #f4fbf8;
-    --inverted-bg-color: #094d33;
-    --primary-color: #052906;
-    --secondary-color: #052906;
-    --inverted-primary-color: #f4fbf8;
-    --inverted-secondary-color: #f4fbf8;
+    --bg-color: #f0f8f0;
+    --inverted-bg-color: #0a3a2a;
+    --primary-color: #0a5c36;
+    --secondary-color: #4caf50;
+    --inverted-primary-color: #e8f5e9;
+    --inverted-secondary-color: #a5d6a7;
+
+    // skeleton
+    --skeleton-shadow: #417141;
+    --skeleton-color: #9cdf9c;
+
+    // code
+    --code-bg: #c7cdc7;
 }

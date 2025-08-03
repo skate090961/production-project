@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { getUserAuthData } from '@/entities/user';
 import { classNames } from '@/shared/lib/class-names/class-names';
+import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
 import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';
 import { SidebarItemType } from '@/widgets/sidebar/model/items';
 
@@ -30,9 +31,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
                 theme={AppLinkTheme.SECONDARY}
                 className={classNames(styles.link, [], { [styles.collapsed]: collapsed })}
             >
-                <div>
-                    <Icon />
-                </div>
+                <AppIcon Svg={Icon} theme={IconTheme.INVERTED_PRIMARY} />
                 <span
                     className={styles.linkText}
                 >

@@ -11,23 +11,283 @@
       "userId": "2"
     }
   ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "AI News",
+      "subtitle": "Главные тенденции в искусственном интеллекте за 2023 год",
+      "img": "https://www.simplilearn.com/ice9/free_resources_article_thumb/Advantages_and_Disadvantages_of_artificial_intelligence.jpg",
+      "views": 2543,
+      "createdAt": "15.03.2023",
+      "type": [
+        "IT",
+        "AI"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Введение в ИИ 2023",
+          "paragraphs": [
+            "Искусственный интеллект продолжает стремительно развиваться, проникая во все сферы нашей жизни. В 2023 году мы наблюдаем несколько ключевых тенденций, которые определяют будущее этой технологии.",
+            "От генеративного ИИ до этических вопросов - технологии искусственного интеллекта становятся все более сложными и в то же время доступными для широкого круга пользователей.",
+            "В этой статье мы рассмотрим основные достижения и вызовы, с которыми столкнулась индустрия ИИ в текущем году."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://aisimple.ru/uploads/posts/2023-06/03-napravleniya-razvitiya-ii.jpg",
+          "title": "Рисунок 1 - Основные тенденции ИИ 2023"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "import tensorflow as tf\n\n# Пример простой нейронной сети\nmodel = tf.keras.Sequential([\n    tf.keras.layers.Dense(128, activation='relu'),\n    tf.keras.layers.Dense(10, activation='softmax')\n])\n\nmodel.compile(optimizer='adam',\n              loss='sparse_categorical_crossentropy',\n              metrics=['accuracy'])"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Генеративный ИИ",
+          "paragraphs": [
+            "2023 год стал прорывным для генеративных моделей. Такие системы, как ChatGPT, DALL-E и Midjourney, демонстрируют невероятные возможности по созданию текстов, изображений и даже кода.",
+            "Эти технологии уже сейчас используются в дизайне, маркетинге, образовании и многих других областях. Однако они также поднимают важные вопросы об авторском праве и достоверности информации."
+          ]
+        },
+        {
+          "id": "5",
+          "type": "CODE",
+          "code": "# Пример использования GPT-3 через API\nimport openai\n\nresponse = openai.Completion.create(\n  engine=\"text-davinci-003\",\n  prompt=\"Напиши краткое эссе о будущем ИИ\",\n  max_tokens=500\n)\n\nprint(response.choices[0].text)"
+        },
+        {
+          "id": "6",
+          "type": "TEXT",
+          "title": "Этика и регулирование",
+          "paragraphs": [
+            "С развитием ИИ все острее встают вопросы этики и регулирования. В 2023 году несколько стран начали разрабатывать специальные законы об искусственном интеллекте.",
+            "Основные проблемы включают в себя предвзятость алгоритмов, приватность данных и потенциальное влияние ИИ на рынок труда. Эксперты призывают к ответсвенному развитию технологий."
+          ]
+        },
+        {
+          "id": "7",
+          "type": "IMAGE",
+          "src": "https://ethics.cdto.ranepa.ru/images/tild6638-3130-4261-a437-623030343937__volume1_infogr-05.jpg",
+          "title": "Рисунок 2 - Принципы этики ИИ"
+        },
+        {
+          "id": "8",
+          "type": "TEXT",
+          "title": "Заключение",
+          "paragraphs": [
+            "Искусственный интеллект продолжает трансформировать наш мир. В 2023 году мы видим, как эти технологии становятся более мощными и доступными, но одновременно с этим растет и понимание связанных с ними рисков.",
+            "Будущее ИИ зависит не только от технического прогресса, но и от того, как общество решит использовать эти технологии и регулировать их применение."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Тренды веб-разработки 2023",
+      "subtitle": "Что изменилось в создании сайтов за последний год?",
+      "img": "https://envybox.io/blog/wp-content/uploads/2023/02/IMG_2152.png",
+      "views": 1876,
+      "createdAt": "10.05.2023",
+      "type": ["IT", "WEB"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новые технологии фронтенда",
+          "paragraphs": [
+            "2023 год принес несколько важных изменений в инструментах фронтенд-разработчиков.",
+            "React 18 стал стандартом де-факто, а Vue 3 окончательно закрепил свою позицию. Но главный сюрприз - рост популярности Svelte, который предлагает принципиально новый подход к построению интерфейсов.",
+            "TypeScript продолжает набирать обороты, и теперь более 80% новых проектов начинаются именно с него."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "// Пример компонента на Svelte\n<script>\n  let count = 0;\n\n  function increment() {\n    count += 1;\n  }\n</script>\n\n<button on:click={increment}>\n  Кликов: {count}\n</button>"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh9UbTlblY9bxZYrAUflGEx5MlkVj7NPMXTw&s",
+          "title": "Рисунок 1 - Популярность фреймворков в 2023"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Бекенд-тенденции",
+          "paragraphs": [
+            "В бекенд-разработке продолжается движение в сторону serverless-архитектур и edge computing.",
+            "Node.js 20 принес значительные улучшения производительности, а Deno 1.35 стал более стабильным выбором для production.",
+            "Особое внимание стоит уделить росту популярности Rust для создания высоконагруженных сервисов."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Киберугрозы 2023",
+      "subtitle": "Какие новые виды атак появились в этом году?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsbGOoKxPLujSm1Rd29O-zNnlIhfBKW2PnaQ&s",
+      "views": 3210,
+      "createdAt": "22.04.2023",
+      "type": ["IT", "SECURITY"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новые векторы атак",
+          "paragraphs": [
+            "2023 год показал резкий рост сложности кибератак. Особенно выделяются:",
+            "1. AI-powered атаки - злоумышленники используют ИИ для создания более изощренных фишинговых сообщений",
+            "2. Атаки на цепочки поставок - через уязвимости в зависимостях программного обеспечения",
+            "3. Квантовые угрозы - хотя квантовые компьютеры еще не распространены, уже появились 'harvest now, decrypt later' атаки"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://rg.ru/uploads/images/2023/07/27/risunok1_c7d.png",
+          "title": "Рисунок 1 - Статистика кибератак 2023"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "title": "Как защититься?",
+          "paragraphs": [
+            "Эксперты рекомендуют следующие меры защиты:",
+            "- Обязательное использование MFA (многофакторной аутентификации) везде, где это возможно",
+            "- Регулярное обновление всех зависимостей в проектах",
+            "- Внедрение Zero Trust архитектуры",
+            "- Обучение сотрудников основам кибербезопасности"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Мобильная разработка в 2023",
+      "subtitle": "Flutter vs React Native - что выбрать?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScOmRS0X9HpXGZF3zO4_noRsKuIsL3L8RPeA&s",
+      "views": 1452,
+      "createdAt": "05.06.2023",
+      "type": ["IT", "MOBILE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Сравнение технологий",
+          "paragraphs": [
+            "В 2023 году два основных кросс-платформенных фреймворка продолжают бороться за лидерство.",
+            "Flutter 3.10 принес значительные улучшения производительности и поддержку новых платформ.",
+            "React Native 0.71 сосредоточился на улучшении developer experience и стабильности.",
+            "Выбор между ними зависит от конкретных требований проекта и навыков команды."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "// Пример компонента на Flutter\nclass MyButton extends StatelessWidget {\n  final String text;\n  \n  const MyButton({required this.text, Key? key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return ElevatedButton(\n      onPressed: () {},\n      child: Text(text),\n    );\n  }\n}"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "// Пример компонента на React Native\nconst MyButton = ({text}) => {\n  return (\n    <Button\n      title={text}\n      onPress={() => {}}\n    />\n  );\n};"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Рекомендации",
+          "paragraphs": [
+            "Для проектов, где важна максимальная производительность и кастомный UI - стоит выбрать Flutter.",
+            "Если в команде есть опытные React-разработчики или нужен быстрый старт - React Native будет лучшим выбором.",
+            "В 2023 году оба фреймворка достигли уровня зрелости, достаточного для создания production-приложений."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "DevOps практики 2023",
+      "subtitle": "Как ускорить delivery без потери качества?",
+      "img": "https://optimalgroup.ru/upload/iblock/551/bqsxfe6m077g0ep64vtadbyng23403cy.jpg",
+      "views": 2105,
+      "createdAt": "18.03.2023",
+      "type": ["IT", "DEVOPS"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Главные тренды",
+          "paragraphs": [
+            "В 2023 году DevOps продолжает эволюционировать. Основные тренды:",
+            "- Platform Engineering - создание внутренних платформ для разработчиков",
+            "- GitOps как стандарт для управления инфраструктурой",
+            "- Расширенное использование AI для мониторинга и устранения инцидентов",
+            "- Фокус на Developer Experience (DX)"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBHpt2wksIyX0kgbD6TGs7i27MjSGdk8QYxw&s",
+          "title": "Рисунок 1 - Популярные DevOps инструменты"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "# Пример GitHub Actions workflow\nname: CI\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    \n    steps:\n    - uses: actions/checkout@v3\n    \n    - name: Setup Node\n      uses: actions/setup-node@v3\n      with:\n        node-version: '18'\n    \n    - run: npm ci\n    - run: npm test"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Советы по внедрению",
+          "paragraphs": [
+            "Для успешного DevOps-трансформации:",
+            "1. Начните с культуры сотрудничества между командами",
+            "2. Автоматизируйте рутинные задачи в первую очередь",
+            "3. Внедряйте метрики для измерения эффективности (DORA metrics)",
+            "4. Не гонитесь за модными инструментами - выбирайте то, что решает ваши конкретные проблемы"
+          ]
+        }
+      ]
+    }
+  ],
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": "1"
+      "text": "some comment 1",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment 2",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text": "some comment 3",
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "admin"
     },
     {
       "id": "2",
       "username": "user",
-      "password": "123"
+      "password": "123",
+      "role": "user"
     }
   ],
   "profile": {

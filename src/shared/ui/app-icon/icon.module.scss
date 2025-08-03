@@ -1,0 +1,16 @@
+.root {
+    width: 24px;
+    height: 24px;
+
+    &.primary {
+        fill: var(--primary-color);
+    }
+
+    &.secondary {
+        fill: var(--secondary-color);
+    }
+
+    &.invertedPrimary {
+        fill: var(--inverted-primary-color);
+    }
+}

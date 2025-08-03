@@ -1,0 +1,13 @@
+.root {
+    position: relative;
+    border: 1px solid var(--primary-color);
+    background-color: var(--code-bg);
+    padding: 20px;
+    overflow: auto;
+}
+
+.copy {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
