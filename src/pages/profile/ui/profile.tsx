@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import { Country } from '@/entities/country';
 import { Currency } from '@/entities/currency';
@@ -16,6 +17,7 @@ import {
     profileReducer,
     ValidateProfileError,
 } from '@/entities/profile';
+import { getUserAuthData } from '@/entities/user';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Text, TextTheme } from '@/shared/ui/text/text';
@@ -29,12 +31,15 @@ const initReducers: ReducerList = {
 const Profile = () => {
     const { t } = useTranslation('profile');
 
+    const { id } = useParams<{id: string}>();
+
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfilerReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const user = useSelector(getUserAuthData);
 
     const validateErrorTranslate = {
         [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера'),
@@ -44,8 +49,10 @@ const Profile = () => {
     };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
+        if (id) {
+            dispatch(fetchProfileData(String(id)));
+        }
+    }, [dispatch, id, user?.id]);
 
     const onChangeFirstname = useCallback((value: string) => {
         dispatch(profileActions.updateForm({ firstname: value || '' }));

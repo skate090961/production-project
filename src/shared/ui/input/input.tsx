@@ -23,7 +23,7 @@ export const Input = memo((props: InputProps) => {
         placeholder,
         autofocus,
         readOnly,
-        ...otherPorps
+        ...otherProps
     } = props;
 
     const ref = useRef<HTMLInputElement>(null);
@@ -73,7 +73,7 @@ export const Input = memo((props: InputProps) => {
                     onFocus={onFocus}
                     onSelect={onSelect}
                     className={styles.input}
-                    {...otherPorps}
+                    {...otherProps}
                 />
                 {isFocused
                     && (

@@ -1,6 +1,8 @@
 import { memo } from 'react';
 
+import { RoutePath } from '@/shared/config/route/route-config';
 import { classNames } from '@/shared/lib/class-names/class-names';
+import { AppLink } from '@/shared/ui/app-link/app-link';
 import { Avatar } from '@/shared/ui/avatar/avatar';
 import { Skeleton } from '@/shared/ui/skeleton/skeleton';
 import { Text, TextSize } from '@/shared/ui/text/text';
@@ -24,7 +26,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <article className={classNames(styles.root, [className])}>
+            <article className={classNames(styles.root, [className, styles.loading])}>
                 <div className={styles.header}>
                     <Skeleton width={30} height={30} radius="50%" />
                     <Skeleton width={100} height={16} />
@@ -36,10 +38,11 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     return (
         <article className={classNames(styles.root, [className])}>
-            <div className={styles.header}>
+            <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={styles.header}>
                 <Avatar size={30} src={comment.user.avatar} />
                 <Text text={comment.user.username} size={TextSize.L} />
-            </div>
+            </AppLink>
+
             <Text text={comment.text} />
         </article>
     );

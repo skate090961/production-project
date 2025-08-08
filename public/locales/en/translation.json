@@ -19,5 +19,7 @@
   "Валюта": "Currency",
   "Страна": "Country",
   "Статьи": "Articles",
-  "Комментарии отсутствуют": "There are no comments yet"
+  "Комментарии отсутствуют": "There are no comments yet",
+  "Введите текст комментария": "Enter your comment text",
+  "Отправить": "Send"
 }
