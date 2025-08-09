@@ -1,12 +1,15 @@
 import React, { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 
-import { ArticleDetailsUI } from '@/entities/article';
+import { ArticleDetailsUI, getArticleDetailsError } from '@/entities/article';
 import { CommentList } from '@/entities/comment';
 import { AddNewComment } from '@/features/add-new-comment';
+import { RoutePath } from '@/shared/config/route/route-config';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
+import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { Text } from '@/shared/ui/text/text';
 
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
@@ -26,7 +29,9 @@ const ArticleDetails = () => {
     const { id } = useParams<{ id: string }>();
     const dispatch = useDispatch();
     const comments = useSelector(getArticleComment.selectAll);
-    const isLoading = useSelector(getArticleDetailsCommentsIsLoading);
+    const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
+    const articleError = useSelector(getArticleDetailsError);
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(fetchCommentsByArticleId(String(id)));
@@ -35,6 +40,10 @@ const ArticleDetails = () => {
     const onSendComment = useCallback((text: string) => {
         dispatch(addNewCommentForArticle(text));
     }, [dispatch]);
+
+    const onBackToList = useCallback(() => {
+        navigate(RoutePath.articles);
+    }, [navigate]);
 
     if (!id) {
         return (
@@ -50,15 +59,23 @@ const ArticleDetails = () => {
             removeAfterUnmount
         >
             <div>
+                <Button
+                    theme={ButtonTheme.OUTLINE}
+                    onClick={onBackToList}
+                >
+                    {t('Назад к списку')}
+                </Button>
                 <ArticleDetailsUI id={id} />
-                <div className={styles.comments}>
-                    <Text title={t('Комментарии')} />
-                    <AddNewComment onSendComment={onSendComment} />
-                    <CommentList
-                        isLoading={isLoading}
-                        comments={comments}
-                    />
-                </div>
+                {!articleError && (
+                    <div className={styles.comments}>
+                        <Text title={t('Комментарии')} />
+                        <AddNewComment onSendComment={onSendComment} />
+                        <CommentList
+                            isLoading={commentsIsLoading}
+                            comments={comments}
+                        />
+                    </div>
+                )}
             </div>
         </DynamicModuleLoader>
     );

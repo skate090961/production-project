@@ -22,7 +22,7 @@
 .modal {
     max-width: 50%;
     background-color: var(--bg-color);
-    border-radius: 12px;
+    border-radius: var(--radius-m);
     transform: scale(0.3);
     transition: 0.3s transform;
 }

@@ -14,6 +14,7 @@
   "articles": [
     {
       "id": "1",
+      "userId": "1",
       "title": "AI News",
       "subtitle": "Главные тенденции в искусственном интеллекте за 2023 год",
       "img": "https://www.simplilearn.com/ice9/free_resources_article_thumb/Advantages_and_Disadvantages_of_artificial_intelligence.jpg",
@@ -87,6 +88,7 @@
     },
     {
       "id": "2",
+      "userId": "1",
       "title": "Тренды веб-разработки 2023",
       "subtitle": "Что изменилось в создании сайтов за последний год?",
       "img": "https://envybox.io/blog/wp-content/uploads/2023/02/IMG_2152.png",
@@ -132,6 +134,7 @@
     },
     {
       "id": "3",
+      "userId": "1",
       "title": "Киберугрозы 2023",
       "subtitle": "Какие новые виды атак появились в этом году?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsbGOoKxPLujSm1Rd29O-zNnlIhfBKW2PnaQ&s",
@@ -175,6 +178,7 @@
     },
     {
       "id": "4",
+      "userId": "2",
       "title": "Мобильная разработка в 2023",
       "subtitle": "Flutter vs React Native - что выбрать?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScOmRS0X9HpXGZF3zO4_noRsKuIsL3L8RPeA&s",
@@ -220,6 +224,7 @@
     },
     {
       "id": "5",
+      "userId": "2",
       "title": "DevOps практики 2023",
       "subtitle": "Как ускорить delivery без потери качества?",
       "img": "https://optimalgroup.ru/upload/iblock/551/bqsxfe6m077g0ep64vtadbyng23403cy.jpg",

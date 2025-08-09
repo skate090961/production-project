@@ -1,6 +1,6 @@
 .root {
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: var(--radius-s);
     padding: 5px 15px;
     user-select: none;
     transition: opacity 0.3s;

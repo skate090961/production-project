@@ -3,3 +3,5 @@ export { ArticleDetailsSchema } from './model/types/article-details-schema';
 export { getArticleDetailsData } from './model/selectors/article-details';
 export { getArticleDetailsError } from './model/selectors/article-details';
 export { getArticleDetailsIsLoading } from './model/selectors/article-details';
+export { ArticleList } from './ui/article-list/article-list';
+export { ArticleView } from './model/types/article';

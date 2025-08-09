@@ -1,0 +1,94 @@
+.list {
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .user {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .textBlock {
+        max-height: 200px;
+        overflow-y: hidden;
+    }
+}
+
+.tile {
+    width: 230px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    .imgWrapper {
+        width: 200px;
+        height: 200px;
+        position: relative;
+
+        img {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            object-fit: cover;
+        }
+
+        .date {
+            display: none;
+            right: 0;
+            top: 0;
+            position: absolute;
+        }
+    }
+
+    &:hover {
+        opacity: 0.8;
+
+        .date {
+            display: block;
+        }
+    }
+
+    .title p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+
+        .types p {
+            width: 115px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
+
+.viewsWrapper {
+    display: flex;
+    gap: 0.5rem;
+}
