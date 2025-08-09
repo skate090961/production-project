@@ -26,6 +26,7 @@ export const CommentList = memo((props: CommentListProps) => {
 
     const renderComments = useMemo(() => comments?.map((c) => (
         <CommentCard
+            key={c.id}
             comment={c}
             isLoading={isLoading}
         />

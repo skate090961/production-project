@@ -8,8 +8,8 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Page } from '@/shared/ui/page/page';
 
 import { getArticlesIsLoading, getArticlesView } from '../../model/selectors/articles';
-import { fetchArticles } from '../../model/services/fetch-articles-list/fetch-articles-list';
 import { fetchArticlesNewPage } from '../../model/services/fetch-articles-new-page/fetch-articles-new-page';
+import { initArticles } from '../../model/services/init-articles/init-articles';
 import { articlesActions, articlesReducer, getArticles } from '../../model/slices/articles-slice';
 
 const initReducers: ReducerList = {
@@ -23,8 +23,7 @@ const Article = () => {
     const view = useSelector(getArticlesView);
 
     useEffect(() => {
-        dispatch(articlesActions.initState());
-        dispatch(fetchArticles({ page: 1 }));
+        dispatch(initArticles());
     }, [dispatch]);
 
     const onChangeView = useCallback((view: ArticleView) => {
@@ -36,7 +35,7 @@ const Article = () => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader reducers={initReducers}>
+        <DynamicModuleLoader reducers={initReducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPart}>
                 <ArticlesViewSelector
                     view={view}
