@@ -1,5 +1,5 @@
 import React, {
-    FC, useCallback, useEffect, useRef, useState,
+    memo, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 
 import CloseIcon from '@/shared/assets/icons/close.svg';
@@ -15,17 +15,20 @@ interface ModalProps {
     isOpen: boolean;
     onClose?: () => void;
     isLazy?: boolean;
+    children?: ReactNode;
 }
 
 const ANIMATION_DELAY = 200;
 
-export const Modal: FC<ModalProps> = ({
-    className,
-    onClose,
-    isOpen,
-    children,
-    isLazy,
-}) => {
+export const Modal = memo((props: ModalProps) => {
+    const {
+        className,
+        onClose,
+        isOpen,
+        children,
+        isLazy,
+    } = props;
+
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
@@ -111,4 +114,4 @@ export const Modal: FC<ModalProps> = ({
             </div>
         </Portal>
     );
-};
+});

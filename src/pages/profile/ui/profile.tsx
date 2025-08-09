@@ -20,6 +20,7 @@ import {
 import { getUserAuthData } from '@/entities/user';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Page } from '@/shared/ui/page/page';
 import { Text, TextTheme } from '@/shared/ui/text/text';
 
 import { ProfilePageHeader } from './profile-page-header/profile-page-header';
@@ -91,28 +92,30 @@ const Profile = () => {
             reducers={initReducers}
             removeAfterUnmount
         >
-            <ProfilePageHeader />
-            {validateErrors?.map((e) => (
-                <Text
-                    key={e}
-                    theme={TextTheme.ERROR}
-                    text={validateErrorTranslate[e]}
+            <Page>
+                <ProfilePageHeader />
+                {validateErrors?.map((e) => (
+                    <Text
+                        key={e}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslate[e]}
+                    />
+                ))}
+                <ProfileCard
+                    data={formData}
+                    isLoading={isLoading}
+                    error={error}
+                    readonly={readonly}
+                    onChangeFirstname={onChangeFirstname}
+                    onChangeLastname={onChangeLastname}
+                    onChangeCity={onChangeCity}
+                    onChangeAge={onChangeAge}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                 />
-            ))}
-            <ProfileCard
-                data={formData}
-                isLoading={isLoading}
-                error={error}
-                readonly={readonly}
-                onChangeFirstname={onChangeFirstname}
-                onChangeLastname={onChangeLastname}
-                onChangeCity={onChangeCity}
-                onChangeAge={onChangeAge}
-                onChangeUsername={onChangeUsername}
-                onChangeAvatar={onChangeAvatar}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-            />
+            </Page>
         </DynamicModuleLoader>
     );
 };

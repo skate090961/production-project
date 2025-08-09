@@ -271,6 +271,739 @@
           ]
         }
       ]
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "title": "Python 3.12: что нового",
+      "subtitle": "Обзор ключевых изменений в последней версии Python",
+      "img": "https://beecrowd.com/wp-content/uploads/2024/04/2022-07-19-Melhores-cursos-de-Python.jpg",
+      "views": 1245,
+      "createdAt": "12.07.2023",
+      "type": ["IT", "PROGRAMMING"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Основные улучшения",
+          "paragraphs": [
+            "Python 3.12 принес несколько важных изменений:",
+            "- Улучшенная производительность (до 15% в некоторых случаях)",
+            "- Новый синтаксис для typed dicts",
+            "- Улучшения в сообщениях об ошибках"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "# Новый синтаксис typed dict\nclass Point(TypedDict):\n    x: float\n    y: float\n    z: float"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "userId": "2",
+      "title": "Rust для веб-разработки",
+      "subtitle": "Можно ли использовать Rust вместо JavaScript?",
+      "img": "https://img2.tapimg.net/post/images/FoOLhtqIOWTzI_i8mflw6ISoS_qf.jpeg?imageMogr2/thumbnail/720x9999%3E/quality/80/format/jpg/interlace/1/ignore-error/1&t=1",
+      "views": 876,
+      "createdAt": "28.06.2023",
+      "type": ["IT", "WEB", "PROGRAMMING"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Плюсы Rust для веба",
+          "paragraphs": [
+            "Rust набирает популярность в веб-разработке благодаря:",
+            "- Высокой производительности",
+            "- Безопасности памяти",
+            "- Возможности компиляции в WASM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "userId": "1",
+      "title": "NoSQL в 2023",
+      "subtitle": "Какие базы данных выбирают разработчики",
+      "img": "https://blog.openreplay.com/images/nosql-vs-sql--a-comparison/images/hero.png",
+      "views": 932,
+      "createdAt": "05.05.2023",
+      "type": ["IT", "DATABASE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Тренды NoSQL",
+          "paragraphs": [
+            "В 2023 году популярны:",
+            "- MongoDB 6.0 с улучшенной аналитикой",
+            "- Redis с поддержкой JSON",
+            "- Новые time-series базы данных"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "userId": "1",
+      "title": "Квантовые компьютеры",
+      "subtitle": "Когда ждать прорыва?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZa4X-f9do3BUrTkoo_bIiApQtBPf-ZJ11Tw&s",
+      "views": 2103,
+      "createdAt": "15.04.2023",
+      "type": ["IT", "SCIENCE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Состояние квантовых вычислений",
+          "paragraphs": [
+            "Хотя квантовые компьютеры пока не готовы для массового использования, в 2023 году:",
+            "- IBM представила 433-кубитный процессор",
+            "- Google достигла квантового превосходства для новой задачи",
+            "- Появились первые квантовые алгоритмы для бизнес-задач"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "userId": "2",
+      "title": "UI/UX тренды 2023",
+      "subtitle": "Что модно в дизайне интерфейсов",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjil7o9xFPp85PilyDNx2Quy22pUILvA7kiw&s",
+      "views": 1567,
+      "createdAt": "22.03.2023",
+      "type": ["IT", "DESIGN"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Главные тренды",
+          "paragraphs": [
+            "В 2023 году в дизайне популярны:",
+            "- Неоморфизм",
+            "- Минимализм с акцентами",
+            "- Анимации при микровзаимодействиях",
+            "- Темные темы по умолчанию"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "userId": "2",
+      "title": "Бессерверные архитектуры",
+      "subtitle": "Почему serverless набирает популярность",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnZADaY7w2-Qcsx-NfnY6LRU4YIcJYKQoZTg&s",
+      "views": 1024,
+      "createdAt": "08.02.2023",
+      "type": ["IT", "CLOUD"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Преимущества serverless",
+          "paragraphs": [
+            "Serverless архитектуры позволяют:",
+            "- Снизить эксплуатационные расходы",
+            "- Автоматически масштабироваться",
+            "- Фокусироваться на коде, а не инфраструктуре"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "userId": "1",
+      "title": "AR/VR разработка",
+      "subtitle": "Перспективы дополненной реальности",
+      "img": "https://www.smu.edu/-/media/site/meadows/newsstories/2023/bisk-smu-new-masters-program/creative-technology-girl-wearing-vr-goggles.png",
+      "views": 789,
+      "createdAt": "30.01.2023",
+      "type": ["IT", "AR/VR"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Развитие технологий",
+          "paragraphs": [
+            "В 2023 году AR/VR ожидает:",
+            "- Новые устройства от Apple и Meta",
+            "- Улучшенные инструменты разработки",
+            "- Расширение сфер применения"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "userId": "2",
+      "title": "Тестирование в 2023",
+      "subtitle": "Новые подходы к QA",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqT6av-f-iU5KDlV413hGufnZEnxEix50drQ&s",
+      "views": 654,
+      "createdAt": "18.01.2023",
+      "type": ["IT", "QA"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Изменения в тестировании",
+          "paragraphs": [
+            "Современное тестирование включает:",
+            "- Автоматизацию на основе AI",
+            "- Shift-left подход",
+            "- Тестирование производительности на ранних этапах"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "userId": "2",
+      "title": "Блокчейн вне криптовалют",
+      "subtitle": "Где еще применяют технологию",
+      "img": "https://cdn.ingos.ru/images/blog/blokchejn.jpg",
+      "views": 1432,
+      "createdAt": "05.01.2023",
+      "type": ["IT", "BLOCKCHAIN"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Применение блокчейна",
+          "paragraphs": [
+            "Помимо криптовалют, блокчейн используют для:",
+            "- Цифровых идентификаторов",
+            "- Управления цепочками поставок",
+            "- Голосований и документооборота"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "userId": "1",
+      "title": "Low-code платформы",
+      "subtitle": "Нужны ли еще программисты?",
+      "img": "https://www.alphasoftware.com/hubfs/Low%20Code%20Citizen%20Developer.jpg",
+      "views": 1789,
+      "createdAt": "25.12.2022",
+      "type": ["IT", "DEVELOPMENT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Возможности low-code",
+          "paragraphs": [
+            "Low-code платформы позволяют:",
+            "- Ускорить разработку простых приложений",
+            "- Вовлечь в процесс нетехнических специалистов",
+            "- Снизить нагрузку на разработчиков"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "16",
+      "userId": "1",
+      "title": "AI News",
+      "subtitle": "Главные тенденции в искусственном интеллекте за 2023 год",
+      "img": "https://www.simplilearn.com/ice9/free_resources_article_thumb/Advantages_and_Disadvantages_of_artificial_intelligence.jpg",
+      "views": 2543,
+      "createdAt": "15.03.2023",
+      "type": [
+        "IT",
+        "AI"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Введение в ИИ 2023",
+          "paragraphs": [
+            "Искусственный интеллект продолжает стремительно развиваться, проникая во все сферы нашей жизни. В 2023 году мы наблюдаем несколько ключевых тенденций, которые определяют будущее этой технологии.",
+            "От генеративного ИИ до этических вопросов - технологии искусственного интеллекта становятся все более сложными и в то же время доступными для широкого круга пользователей.",
+            "В этой статье мы рассмотрим основные достижения и вызовы, с которыми столкнулась индустрия ИИ в текущем году."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://aisimple.ru/uploads/posts/2023-06/03-napravleniya-razvitiya-ii.jpg",
+          "title": "Рисунок 1 - Основные тенденции ИИ 2023"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "import tensorflow as tf\n\n# Пример простой нейронной сети\nmodel = tf.keras.Sequential([\n    tf.keras.layers.Dense(128, activation='relu'),\n    tf.keras.layers.Dense(10, activation='softmax')\n])\n\nmodel.compile(optimizer='adam',\n              loss='sparse_categorical_crossentropy',\n              metrics=['accuracy'])"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Генеративный ИИ",
+          "paragraphs": [
+            "2023 год стал прорывным для генеративных моделей. Такие системы, как ChatGPT, DALL-E и Midjourney, демонстрируют невероятные возможности по созданию текстов, изображений и даже кода.",
+            "Эти технологии уже сейчас используются в дизайне, маркетинге, образовании и многих других областях. Однако они также поднимают важные вопросы об авторском праве и достоверности информации."
+          ]
+        },
+        {
+          "id": "5",
+          "type": "CODE",
+          "code": "# Пример использования GPT-3 через API\nimport openai\n\nresponse = openai.Completion.create(\n  engine=\"text-davinci-003\",\n  prompt=\"Напиши краткое эссе о будущем ИИ\",\n  max_tokens=500\n)\n\nprint(response.choices[0].text)"
+        },
+        {
+          "id": "6",
+          "type": "TEXT",
+          "title": "Этика и регулирование",
+          "paragraphs": [
+            "С развитием ИИ все острее встают вопросы этики и регулирования. В 2023 году несколько стран начали разрабатывать специальные законы об искусственном интеллекте.",
+            "Основные проблемы включают в себя предвзятость алгоритмов, приватность данных и потенциальное влияние ИИ на рынок труда. Эксперты призывают к ответсвенному развитию технологий."
+          ]
+        },
+        {
+          "id": "7",
+          "type": "IMAGE",
+          "src": "https://ethics.cdto.ranepa.ru/images/tild6638-3130-4261-a437-623030343937__volume1_infogr-05.jpg",
+          "title": "Рисунок 2 - Принципы этики ИИ"
+        },
+        {
+          "id": "8",
+          "type": "TEXT",
+          "title": "Заключение",
+          "paragraphs": [
+            "Искусственный интеллект продолжает трансформировать наш мир. В 2023 году мы видим, как эти технологии становятся более мощными и доступными, но одновременно с этим растет и понимание связанных с ними рисков.",
+            "Будущее ИИ зависит не только от технического прогресса, но и от того, как общество решит использовать эти технологии и регулировать их применение."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "userId": "1",
+      "title": "Тренды веб-разработки 2023",
+      "subtitle": "Что изменилось в создании сайтов за последний год?",
+      "img": "https://envybox.io/blog/wp-content/uploads/2023/02/IMG_2152.png",
+      "views": 1876,
+      "createdAt": "10.05.2023",
+      "type": [
+        "IT",
+        "WEB"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новые технологии фронтенда",
+          "paragraphs": [
+            "2023 год принес несколько важных изменений в инструментах фронтенд-разработчиков.",
+            "React 18 стал стандартом де-факто, а Vue 3 окончательно закрепил свою позицию. Но главный сюрприз - рост популярности Svelte, который предлагает принципиально новый подход к построению интерфейсов.",
+            "TypeScript продолжает набирать обороты, и теперь более 80% новых проектов начинаются именно с него."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "// Пример компонента на Svelte\n<script>\n  let count = 0;\n\n  function increment() {\n    count += 1;\n  }\n</script>\n\n<button on:click={increment}>\n  Кликов: {count}\n</button>"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh9UbTlblY9bxZYrAUflGEx5MlkVj7NPMXTw&s",
+          "title": "Рисунок 1 - Популярность фреймворков в 2023"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Бекенд-тенденции",
+          "paragraphs": [
+            "В бекенд-разработке продолжается движение в сторону serverless-архитектур и edge computing.",
+            "Node.js 20 принес значительные улучшения производительности, а Deno 1.35 стал более стабильным выбором для production.",
+            "Особое внимание стоит уделить росту популярности Rust для создания высоконагруженных сервисов."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "userId": "1",
+      "title": "Киберугрозы 2023",
+      "subtitle": "Какие новые виды атак появились в этом году?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsbGOoKxPLujSm1Rd29O-zNnlIhfBKW2PnaQ&s",
+      "views": 3210,
+      "createdAt": "22.04.2023",
+      "type": [
+        "IT",
+        "SECURITY"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Новые векторы атак",
+          "paragraphs": [
+            "2023 год показал резкий рост сложности кибератак. Особенно выделяются:",
+            "1. AI-powered атаки - злоумышленники используют ИИ для создания более изощренных фишинговых сообщений",
+            "2. Атаки на цепочки поставок - через уязвимости в зависимостях программного обеспечения",
+            "3. Квантовые угрозы - хотя квантовые компьютеры еще не распространены, уже появились 'harvest now, decrypt later' атаки"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://rg.ru/uploads/images/2023/07/27/risunok1_c7d.png",
+          "title": "Рисунок 1 - Статистика кибератак 2023"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "title": "Как защититься?",
+          "paragraphs": [
+            "Эксперты рекомендуют следующие меры защиты:",
+            "- Обязательное использование MFA (многофакторной аутентификации) везде, где это возможно",
+            "- Регулярное обновление всех зависимостей в проектах",
+            "- Внедрение Zero Trust архитектуры",
+            "- Обучение сотрудников основам кибербезопасности"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "userId": "2",
+      "title": "Мобильная разработка в 2023",
+      "subtitle": "Flutter vs React Native - что выбрать?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScOmRS0X9HpXGZF3zO4_noRsKuIsL3L8RPeA&s",
+      "views": 1452,
+      "createdAt": "05.06.2023",
+      "type": [
+        "IT",
+        "MOBILE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Сравнение технологий",
+          "paragraphs": [
+            "В 2023 году два основных кросс-платформенных фреймворка продолжают бороться за лидерство.",
+            "Flutter 3.10 принес значительные улучшения производительности и поддержку новых платформ.",
+            "React Native 0.71 сосредоточился на улучшении developer experience и стабильности.",
+            "Выбор между ними зависит от конкретных требований проекта и навыков команды."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "// Пример компонента на Flutter\nclass MyButton extends StatelessWidget {\n  final String text;\n  \n  const MyButton({required this.text, Key? key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return ElevatedButton(\n      onPressed: () {},\n      child: Text(text),\n    );\n  }\n}"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "// Пример компонента на React Native\nconst MyButton = ({text}) => {\n  return (\n    <Button\n      title={text}\n      onPress={() => {}}\n    />\n  );\n};"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Рекомендации",
+          "paragraphs": [
+            "Для проектов, где важна максимальная производительность и кастомный UI - стоит выбрать Flutter.",
+            "Если в команде есть опытные React-разработчики или нужен быстрый старт - React Native будет лучшим выбором.",
+            "В 2023 году оба фреймворка достигли уровня зрелости, достаточного для создания production-приложений."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "userId": "2",
+      "title": "DevOps практики 2023",
+      "subtitle": "Как ускорить delivery без потери качества?",
+      "img": "https://optimalgroup.ru/upload/iblock/551/bqsxfe6m077g0ep64vtadbyng23403cy.jpg",
+      "views": 2105,
+      "createdAt": "18.03.2023",
+      "type": [
+        "IT",
+        "DEVOPS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Главные тренды",
+          "paragraphs": [
+            "В 2023 году DevOps продолжает эволюционировать. Основные тренды:",
+            "- Platform Engineering - создание внутренних платформ для разработчиков",
+            "- GitOps как стандарт для управления инфраструктурой",
+            "- Расширенное использование AI для мониторинга и устранения инцидентов",
+            "- Фокус на Developer Experience (DX)"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBHpt2wksIyX0kgbD6TGs7i27MjSGdk8QYxw&s",
+          "title": "Рисунок 1 - Популярные DevOps инструменты"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "# Пример GitHub Actions workflow\nname: CI\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    \n    steps:\n    - uses: actions/checkout@v3\n    \n    - name: Setup Node\n      uses: actions/setup-node@v3\n      with:\n        node-version: '18'\n    \n    - run: npm ci\n    - run: npm test"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Советы по внедрению",
+          "paragraphs": [
+            "Для успешного DevOps-трансформации:",
+            "1. Начните с культуры сотрудничества между командами",
+            "2. Автоматизируйте рутинные задачи в первую очередь",
+            "3. Внедряйте метрики для измерения эффективности (DORA metrics)",
+            "4. Не гонитесь за модными инструментами - выбирайте то, что решает ваши конкретные проблемы"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "userId": "1",
+      "title": "Python 3.12: что нового",
+      "subtitle": "Обзор ключевых изменений в последней версии Python",
+      "img": "https://beecrowd.com/wp-content/uploads/2024/04/2022-07-19-Melhores-cursos-de-Python.jpg",
+      "views": 1245,
+      "createdAt": "12.07.2023",
+      "type": ["IT", "PROGRAMMING"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Основные улучшения",
+          "paragraphs": [
+            "Python 3.12 принес несколько важных изменений:",
+            "- Улучшенная производительность (до 15% в некоторых случаях)",
+            "- Новый синтаксис для typed dicts",
+            "- Улучшения в сообщениях об ошибках"
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "# Новый синтаксис typed dict\nclass Point(TypedDict):\n    x: float\n    y: float\n    z: float"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "userId": "2",
+      "title": "Rust для веб-разработки",
+      "subtitle": "Можно ли использовать Rust вместо JavaScript?",
+      "img": "https://img2.tapimg.net/post/images/FoOLhtqIOWTzI_i8mflw6ISoS_qf.jpeg?imageMogr2/thumbnail/720x9999%3E/quality/80/format/jpg/interlace/1/ignore-error/1&t=1",
+      "views": 876,
+      "createdAt": "28.06.2023",
+      "type": ["IT", "WEB", "PROGRAMMING"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Плюсы Rust для веба",
+          "paragraphs": [
+            "Rust набирает популярность в веб-разработке благодаря:",
+            "- Высокой производительности",
+            "- Безопасности памяти",
+            "- Возможности компиляции в WASM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "userId": "1",
+      "title": "NoSQL в 2023",
+      "subtitle": "Какие базы данных выбирают разработчики",
+      "img": "https://blog.openreplay.com/images/nosql-vs-sql--a-comparison/images/hero.png",
+      "views": 932,
+      "createdAt": "05.05.2023",
+      "type": ["IT", "DATABASE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Тренды NoSQL",
+          "paragraphs": [
+            "В 2023 году популярны:",
+            "- MongoDB 6.0 с улучшенной аналитикой",
+            "- Redis с поддержкой JSON",
+            "- Новые time-series базы данных"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "userId": "1",
+      "title": "Квантовые компьютеры",
+      "subtitle": "Когда ждать прорыва?",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZa4X-f9do3BUrTkoo_bIiApQtBPf-ZJ11Tw&s",
+      "views": 2103,
+      "createdAt": "15.04.2023",
+      "type": ["IT", "SCIENCE"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Состояние квантовых вычислений",
+          "paragraphs": [
+            "Хотя квантовые компьютеры пока не готовы для массового использования, в 2023 году:",
+            "- IBM представила 433-кубитный процессор",
+            "- Google достигла квантового превосходства для новой задачи",
+            "- Появились первые квантовые алгоритмы для бизнес-задач"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "userId": "2",
+      "title": "UI/UX тренды 2023",
+      "subtitle": "Что модно в дизайне интерфейсов",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjil7o9xFPp85PilyDNx2Quy22pUILvA7kiw&s",
+      "views": 1567,
+      "createdAt": "22.03.2023",
+      "type": ["IT", "DESIGN"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Главные тренды",
+          "paragraphs": [
+            "В 2023 году в дизайне популярны:",
+            "- Неоморфизм",
+            "- Минимализм с акцентами",
+            "- Анимации при микровзаимодействиях",
+            "- Темные темы по умолчанию"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "userId": "2",
+      "title": "Бессерверные архитектуры",
+      "subtitle": "Почему serverless набирает популярность",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnZADaY7w2-Qcsx-NfnY6LRU4YIcJYKQoZTg&s",
+      "views": 1024,
+      "createdAt": "08.02.2023",
+      "type": ["IT", "CLOUD"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Преимущества serverless",
+          "paragraphs": [
+            "Serverless архитектуры позволяют:",
+            "- Снизить эксплуатационные расходы",
+            "- Автоматически масштабироваться",
+            "- Фокусироваться на коде, а не инфраструктуре"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "userId": "1",
+      "title": "AR/VR разработка",
+      "subtitle": "Перспективы дополненной реальности",
+      "img": "https://www.smu.edu/-/media/site/meadows/newsstories/2023/bisk-smu-new-masters-program/creative-technology-girl-wearing-vr-goggles.png",
+      "views": 789,
+      "createdAt": "30.01.2023",
+      "type": ["IT", "AR/VR"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Развитие технологий",
+          "paragraphs": [
+            "В 2023 году AR/VR ожидает:",
+            "- Новые устройства от Apple и Meta",
+            "- Улучшенные инструменты разработки",
+            "- Расширение сфер применения"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "userId": "2",
+      "title": "Тестирование в 2023",
+      "subtitle": "Новые подходы к QA",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqT6av-f-iU5KDlV413hGufnZEnxEix50drQ&s",
+      "views": 654,
+      "createdAt": "18.01.2023",
+      "type": ["IT", "QA"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Изменения в тестировании",
+          "paragraphs": [
+            "Современное тестирование включает:",
+            "- Автоматизацию на основе AI",
+            "- Shift-left подход",
+            "- Тестирование производительности на ранних этапах"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "userId": "2",
+      "title": "Блокчейн вне криптовалют",
+      "subtitle": "Где еще применяют технологию",
+      "img": "https://cdn.ingos.ru/images/blog/blokchejn.jpg",
+      "views": 1432,
+      "createdAt": "05.01.2023",
+      "type": ["IT", "BLOCKCHAIN"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Применение блокчейна",
+          "paragraphs": [
+            "Помимо криптовалют, блокчейн используют для:",
+            "- Цифровых идентификаторов",
+            "- Управления цепочками поставок",
+            "- Голосований и документооборота"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "userId": "1",
+      "title": "Low-code платформы",
+      "subtitle": "Нужны ли еще программисты?",
+      "img": "https://www.alphasoftware.com/hubfs/Low%20Code%20Citizen%20Developer.jpg",
+      "views": 1789,
+      "createdAt": "25.12.2022",
+      "type": ["IT", "DEVELOPMENT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Возможности low-code",
+          "paragraphs": [
+            "Low-code платформы позволяют:",
+            "- Ускорить разработку простых приложений",
+            "- Вовлечь в процесс нетехнических специалистов",
+            "- Снизить нагрузку на разработчиков"
+          ]
+        }
+      ]
     }
   ],
   "comments": [

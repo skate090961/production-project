@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/class-names/class-names';
 import { Loader } from '@/shared/ui/loader/loader';
+import { Page } from '@/shared/ui/page/page';
 
 import styles from './page-loader.module.scss';
 
@@ -8,7 +8,9 @@ interface PageLoaderProps {
 }
 
 export const PageLoader = ({ className }: PageLoaderProps) => (
-    <div className={classNames(styles.root, [className])}>
-        <Loader />
-    </div>
+    <Page className={className}>
+        <div className={styles.loaderWrapper}>
+            <Loader />
+        </div>
+    </Page>
 );

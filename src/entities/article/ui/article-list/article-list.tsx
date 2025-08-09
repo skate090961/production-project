@@ -40,17 +40,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
         />
     ), [view]);
 
-    if (isLoading) {
-        return (
-            <div className={classNames(styles.root, [className, styles[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     return (
         <div className={classNames(styles.root, [className, styles[view]])}>
             {articles.length ? articles.map(renderArticle) : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

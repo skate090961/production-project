@@ -34,7 +34,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     )), [isCollapsed, sidebarItemList]);
 
     return (
-        <aside
+        <menu
             className={classNames(styles.root, [className], { [styles.collapsed]: isCollapsed })}
             aria-label="Боковая панель"
             data-testid="sidebar"
@@ -56,6 +56,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 <ThemeSwitcher />
                 <LangSwitcher isShort={isCollapsed} />
             </div>
-        </aside>
+        </menu>
     );
 });

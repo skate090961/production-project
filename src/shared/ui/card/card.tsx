@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from 'react';
+import { HTMLAttributes, memo, ReactNode } from 'react';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
 
@@ -6,17 +6,18 @@ import styles from './card.module.scss';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
+    children?: ReactNode;
 }
 
-export const Card: FC<CardProps> = (props) => {
+export const Card = memo((props: CardProps) => {
     const { className, children, ...otherProps } = props;
 
     return (
-        <div
+        <article
             className={classNames(styles.root, [className])}
             {...otherProps}
         >
             {children}
-        </div>
+        </article>
     );
-};
+});

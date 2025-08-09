@@ -10,6 +10,7 @@ import { AddNewComment } from '@/features/add-new-comment';
 import { RoutePath } from '@/shared/config/route/route-config';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
+import { Page } from '@/shared/ui/page/page';
 import { Text } from '@/shared/ui/text/text';
 
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
@@ -58,7 +59,7 @@ const ArticleDetails = () => {
             reducers={initReducers}
             removeAfterUnmount
         >
-            <div>
+            <Page>
                 <Button
                     theme={ButtonTheme.OUTLINE}
                     onClick={onBackToList}
@@ -76,7 +77,7 @@ const ArticleDetails = () => {
                         />
                     </div>
                 )}
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
