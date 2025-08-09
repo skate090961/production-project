@@ -15,7 +15,7 @@ interface ArticleListItemSkeletonProps {
 
 export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps) => {
     const {
-        view = ArticleView.TILE,
+        view = ArticleView.GRID,
         className,
     } = props;
 
@@ -42,7 +42,7 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
         );
     }
 
-    if (view === ArticleView.TILE) {
+    if (view === ArticleView.GRID) {
         return (
             <div className={classNames(styles.root, [className, styles[view]])}>
                 <Card>

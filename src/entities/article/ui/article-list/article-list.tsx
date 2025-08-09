@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { ArticleListItemSkeleton } from '@/entities/article/ui/article-list-item/article-list-item-skeleton';
 import { classNames } from '@/shared/lib/class-names/class-names';
@@ -16,7 +15,7 @@ interface ArticleListProps {
     view: ArticleView;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.TILE ? 9 : 3)
+const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 9 : 3)
     .fill(0)
     .map((_, index) => (
         <ArticleListItemSkeleton
@@ -28,11 +27,10 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.TILE 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
         articles,
-        view = ArticleView.TILE,
+        view = ArticleView.GRID,
         isLoading,
         className,
     } = props;
-    const { t } = useTranslation();
 
     const renderArticle = useCallback((article: Article) => (
         <ArticleListItem
@@ -42,7 +40,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         />
     ), [view]);
 
-    if (true) {
+    if (isLoading) {
         return (
             <div className={classNames(styles.root, [className, styles[view]])}>
                 {getSkeletons(view)}

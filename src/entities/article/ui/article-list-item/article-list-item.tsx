@@ -27,7 +27,7 @@ interface ArticleItemProps {
 export const ArticleListItem = memo((props: ArticleItemProps) => {
     const {
         article,
-        view = ArticleView.TILE,
+        view = ArticleView.GRID,
         className,
     } = props;
 
@@ -91,7 +91,7 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
         );
     }
 
-    if (view === ArticleView.TILE) {
+    if (view === ArticleView.GRID) {
         return (
             <div className={classNames(styles.root, [className, styles[view]])}>
                 <Card onClick={onOpenArticle}>

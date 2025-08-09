@@ -28,7 +28,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
             return data;
         } catch (e) {
-            console.log(e);
             return rejectWithValue('error');
         }
     },

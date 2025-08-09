@@ -381,6 +381,12 @@
       "userId": "1",
       "text": "123",
       "id": "BFFoH--"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "Hi",
+      "id": "ukT6jIw"
     }
   ],
   "users": [
