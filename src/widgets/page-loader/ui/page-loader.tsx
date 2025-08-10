@@ -1,5 +1,5 @@
 import { Loader } from '@/shared/ui/loader/loader';
-import { Page } from '@/shared/ui/page/page';
+import { Page } from '@/widgets/page/page';
 
 import styles from './page-loader.module.scss';
 

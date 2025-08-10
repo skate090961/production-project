@@ -15,20 +15,6 @@ export const addNewCommentSlice = createSlice({
             state.text = action.payload;
         },
     },
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(sendComment.pending, (state) => {
-    //             state.error = undefined;
-    //             state.isLoading = true;
-    //         })
-    //         .addCase(sendComment.fulfilled, (state) => {
-    //             state.isLoading = false;
-    //         })
-    //         .addCase(sendComment.rejected, (state, action) => {
-    //             state.isLoading = false;
-    //             state.error = action.payload;
-    //         });
-    // },
 });
 
 export const { reducer: addNewCommentReducer } = addNewCommentSlice;

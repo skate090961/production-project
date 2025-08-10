@@ -3,6 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 
 import { userReducer } from '@/entities/user';
+import { scrollSaveReducer } from '@/features/scroll-save';
 import { $api } from '@/shared/api/api';
 
 import { createReducerManager } from './reducer-manager';
@@ -15,6 +16,7 @@ interface CreateReduxStoreProps {
 export function createReduxStore({ initState }: CreateReduxStoreProps) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         user: userReducer,
+        scrollSave: scrollSaveReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);

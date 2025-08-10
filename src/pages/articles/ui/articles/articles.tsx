@@ -5,7 +5,7 @@ import { ArticleList, ArticleView } from '@/entities/article';
 import { ArticlesViewSelector } from '@/features/articles-view-selector';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Page } from '@/shared/ui/page/page';
+import { Page } from '@/widgets/page/page';
 
 import { getArticlesIsLoading, getArticlesView } from '../../model/selectors/articles';
 import { fetchArticlesNewPage } from '../../model/services/fetch-articles-new-page/fetch-articles-new-page';
