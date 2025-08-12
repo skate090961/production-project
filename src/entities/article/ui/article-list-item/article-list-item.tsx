@@ -1,11 +1,11 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router';
 
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { RoutePath } from '@/shared/config/route/route-config';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
+import { AppLink } from '@/shared/ui/app-link/app-link';
 import { Avatar } from '@/shared/ui/avatar/avatar';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { Card } from '@/shared/ui/card/card';
@@ -22,6 +22,7 @@ interface ArticleItemProps {
     className?: string;
     article: Article;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleItemProps) => {
@@ -29,14 +30,10 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
         article,
         view = ArticleView.GRID,
         className,
+        target,
     } = props;
 
     const { t } = useTranslation('article');
-    const navigate = useNavigate();
-
-    const onOpenArticle = useCallback(() => {
-        navigate(`${RoutePath.article_details}${article.id}`);
-    }, [article.id, navigate]);
 
     const types = (
         <Text
@@ -51,6 +48,8 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
             <AppIcon Svg={EyeIcon} theme={IconTheme.SECONDARY} />
         </div>
     );
+
+    const articlePath = `${RoutePath.article_details}${article.id}`;
 
     if (view === ArticleView.LIST) {
         const textBlock = article.blocks.find(
@@ -78,12 +77,13 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
                         </div>
                     )}
                     <div className={styles.footer}>
-                        <Button
-                            theme={ButtonTheme.OUTLINE}
-                            onClick={onOpenArticle}
-                        >
-                            {t('Читать далее...')}
-                        </Button>
+                        <AppLink to={articlePath} target={target}>
+                            <Button
+                                theme={ButtonTheme.OUTLINE}
+                            >
+                                {t('Читать далее...')}
+                            </Button>
+                        </AppLink>
                         {views}
                     </div>
                 </Card>
@@ -93,8 +93,12 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
 
     if (view === ArticleView.GRID) {
         return (
-            <div className={classNames(styles.root, [className, styles[view]])}>
-                <Card onClick={onOpenArticle}>
+            <AppLink
+                className={classNames(styles.root, [className, styles[view]])}
+                to={articlePath}
+                target={target}
+            >
+                <Card>
                     <div className={styles.imgWrapper}>
                         <img src={article.img} alt={article.title} />
                         <Text text={article.createdAt} className={styles.date} />
@@ -105,7 +109,7 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
                     </div>
                     <Text text={article.title} className={styles.title} />
                 </Card>
-            </div>
+            </AppLink>
         );
     }
 

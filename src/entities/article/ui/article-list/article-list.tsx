@@ -1,9 +1,9 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ArticleListItemSkeleton } from '@/entities/article/ui/article-list-item/article-list-item-skeleton';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { Text, TextAlign, TextSize } from '@/shared/ui/text/text';
+import { Text, TextSize } from '@/shared/ui/text/text';
 
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../article-list-item/article-list-item';
@@ -14,7 +14,8 @@ interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
-    view: ArticleView;
+    view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.GRID ? 9 : 3)
@@ -32,6 +33,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.GRID,
         isLoading,
         className,
+        target,
     } = props;
 
     const { t } = useTranslation('article');
@@ -41,8 +43,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
             key={article.id}
             article={article}
             view={view}
+            target={target}
         />
-    ), [view]);
+    ), [target, view]);
 
     if (!isLoading && !articles.length) {
         return (

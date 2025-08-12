@@ -29,4 +29,3 @@ export const articleDetailsSlice = createSlice({
     },
 });
 export const { reducer: articleDetailsReducer } = articleDetailsSlice;
-export const { actions: articleDetailsActions } = articleDetailsSlice;

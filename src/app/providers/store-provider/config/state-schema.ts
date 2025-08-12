@@ -9,7 +9,7 @@ import { UserSchema } from '@/entities/user';
 import { AddNewCommentSchema } from '@/features/add-new-comment';
 import { LoginSchema } from '@/features/auth-by-username';
 import { ScrollSaveSchema } from '@/features/scroll-save';
-import { ArticleDetailsCommentsSchema } from '@/pages/article-details';
+import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from '@/pages/article-details';
 import { ArticlesSchema } from '@/pages/articles';
 
 export interface StateSchema {
@@ -23,6 +23,7 @@ export interface StateSchema {
     articleDetailsComments?: ArticleDetailsCommentsSchema;
     addNewComment?: AddNewCommentSchema;
     articles?: ArticlesSchema;
+    articleDetailsRecommendations?: ArticleDetailsRecommendationsSchema;
 }
 
 export type StateSchemaKeys = keyof StateSchema;
