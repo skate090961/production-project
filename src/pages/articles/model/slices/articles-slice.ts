@@ -1,8 +1,14 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { StateSchema } from '@/app/providers/store-provider';
-import { Article, ArticleView } from '@/entities/article';
+import {
+    Article,
+    ArticleSortField,
+    ArticleType,
+    ArticleView,
+} from '@/entities/article';
 import { ARTICLES_VIEW_LS_KEY } from '@/shared/consts/local-storage';
+import { SortOrder } from '@/shared/types';
 
 import { fetchArticles } from '../services/fetch-articles-list/fetch-articles-list';
 import { ArticlesSchema } from '../types/articles-schema';
@@ -26,6 +32,10 @@ const articlesSlice = createSlice({
         hasMore: true,
         page: 1,
         _inited: false,
+        order: 'asc',
+        search: '',
+        sort: ArticleSortField.CREATED,
+        type: ArticleType.ALL,
     }),
     reducers: {
         updateView: (state, action: PayloadAction<ArticleView>) => {
@@ -34,6 +44,18 @@ const articlesSlice = createSlice({
         },
         updatePage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;
+        },
+        updateOrder: (state, action: PayloadAction<SortOrder>) => {
+            state.order = action.payload;
+        },
+        updateSearch: (state, action: PayloadAction<string>) => {
+            state.search = action.payload;
+        },
+        updateSort: (state, action: PayloadAction<ArticleSortField>) => {
+            state.sort = action.payload;
+        },
+        updateType: (state, action: PayloadAction<ArticleType>) => {
+            state.type = action.payload;
         },
         initState: (state) => {
             const view = localStorage.getItem(ARTICLES_VIEW_LS_KEY) as ArticleView;
@@ -44,14 +66,28 @@ const articlesSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticles.pending, (state) => {
+            .addCase(fetchArticles.pending, (state, action) => {
                 state.error = undefined;
                 state.isLoading = true;
+
+                if (action.meta.arg.replace) {
+                    articlesAdapter.removeAll(state);
+                }
             })
-            .addCase(fetchArticles.fulfilled, (state, action: PayloadAction<Article[]>) => {
+            .addCase(fetchArticles.fulfilled, (
+                state,
+                action,
+            ) => {
                 state.isLoading = false;
-                articlesAdapter.addMany(state, action.payload);
-                state.hasMore = action.payload.length > 0;
+                if (state.limit) {
+                    state.hasMore = action.payload.length >= state.limit;
+                }
+
+                if (action.meta.arg.replace) {
+                    articlesAdapter.setAll(state, action.payload);
+                } else {
+                    articlesAdapter.addMany(state, action.payload);
+                }
             })
             .addCase(fetchArticles.rejected, (state, action) => {
                 state.isLoading = false;

@@ -1,5 +1,13 @@
 .root {
     padding: 15px;
     border-radius: var(--radius-m);
-    background: var(--card-bg);
+
+    &.normal {
+        background: var(--card-bg);
+    }
+
+    &.outlined {
+        background: transparent;
+        border: 1px solid var(--primary-color);
+    }
 }

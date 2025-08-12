@@ -1,8 +1,8 @@
 import React, { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
-import { ArticleList, ArticleView } from '@/entities/article';
-import { ArticlesViewSelector } from '@/features/articles-view-selector';
+import { ArticleList } from '@/entities/article';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Page } from '@/widgets/page/page';
@@ -10,7 +10,10 @@ import { Page } from '@/widgets/page/page';
 import { getArticlesIsLoading, getArticlesView } from '../../model/selectors/articles';
 import { fetchArticlesNewPage } from '../../model/services/fetch-articles-new-page/fetch-articles-new-page';
 import { initArticles } from '../../model/services/init-articles/init-articles';
-import { articlesActions, articlesReducer, getArticles } from '../../model/slices/articles-slice';
+import { articlesReducer, getArticles } from '../../model/slices/articles-slice';
+import { ArticlesFilters } from '../articles-filters/articles-filters';
+
+import styles from './articles.module.scss';
 
 const initReducers: ReducerList = {
     articles: articlesReducer,
@@ -21,14 +24,11 @@ const Article = () => {
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesIsLoading);
     const view = useSelector(getArticlesView);
+    const [searchParams] = useSearchParams();
 
     useEffect(() => {
-        dispatch(initArticles());
-    }, [dispatch]);
-
-    const onChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlesActions.updateView(view));
-    }, [dispatch]);
+        dispatch(initArticles(searchParams));
+    }, [dispatch, searchParams]);
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchArticlesNewPage());
@@ -36,11 +36,8 @@ const Article = () => {
 
     return (
         <DynamicModuleLoader reducers={initReducers} removeAfterUnmount={false}>
-            <Page onScrollEnd={onLoadNextPart}>
-                <ArticlesViewSelector
-                    view={view}
-                    onViewClick={onChangeView}
-                />
+            <Page onScrollEnd={onLoadNextPart} className={styles.root}>
+                <ArticlesFilters />
                 <ArticleList
                     isLoading={isLoading}
                     articles={articles}

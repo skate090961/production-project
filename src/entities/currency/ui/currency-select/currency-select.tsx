@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Currency } from '@/entities/currency';
@@ -30,16 +30,12 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
 
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Currency);
-    }, [onChange]);
-
     return (
         <Select
             className={className}
             label={t('Валюта')}
             value={value}
-            onChange={onChangeHandler}
+            onChange={onChange}
             options={options}
             readonly={readonly}
         />

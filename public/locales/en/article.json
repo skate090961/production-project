@@ -3,5 +3,12 @@
   "Произошла ошибка при загрузке статьи": "There was an error loading the article",
   "Комментарии": "Comments",
   "Читать далее...": "Read more...",
-  "Назад к списку": "Back to list"
+  "Назад к списку": "Back to list",
+  "IT": "IT",
+  "AI": "AI",
+  "WEB": "WEB",
+  "DEVOPS": "DEVOPS",
+  "SCIENCE": "SCIENCE",
+  "ALL": "ALL",
+  "Статьи не найдены": "No articles found"
 }
