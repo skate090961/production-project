@@ -2,8 +2,9 @@ import { memo, useCallback } from 'react';
 
 import CopyIcon from '@/shared/assets/icons/copy.svg';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { AppIcon } from '@/shared/ui/app-icon/app-icon';
-import { Button, ButtonTheme } from '@/shared/ui/button/button';
+
+import { AppIcon } from '../app-icon/app-icon';
+import { Button, ButtonTheme } from '../button/button';
 
 import styles from './code.module.scss';
 

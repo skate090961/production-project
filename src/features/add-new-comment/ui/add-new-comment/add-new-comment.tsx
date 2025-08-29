@@ -8,7 +8,10 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Button } from '@/shared/ui/button/button';
 import { Input } from '@/shared/ui/input/input';
 
-import { getAddNewCommentIsLoading, getAddNewCommentText } from '../../model/selectors/add-new-comment-selectors';
+import {
+    getAddNewCommentIsLoading,
+    getAddNewCommentText,
+} from '../../model/selectors/add-new-comment-selectors';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/add-new-comment-slice';
 
 import styles from './add-new-comment.module.scss';

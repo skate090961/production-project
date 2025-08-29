@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'skate0909-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -95,6 +96,7 @@ module.exports = {
                 warnOnUnassignedImports: true,
             },
         ],
+        'skate0909-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

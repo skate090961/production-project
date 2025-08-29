@@ -4,9 +4,10 @@ import React, {
 
 import CloseIcon from '@/shared/assets/icons/close.svg';
 import { classNames, Mods } from '@/shared/lib/class-names/class-names';
-import { AppIcon } from '@/shared/ui/app-icon/app-icon';
-import { Button, ButtonTheme } from '@/shared/ui/button/button';
-import { Portal } from '@/shared/ui/portal/portal';
+
+import { AppIcon } from '../app-icon/app-icon';
+import { Button, ButtonTheme } from '../button/button';
+import { Portal } from '../portal/portal';
 
 import styles from './modal.module.scss';
 

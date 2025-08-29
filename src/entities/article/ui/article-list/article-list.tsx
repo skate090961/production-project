@@ -1,12 +1,12 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleListItemSkeleton } from '@/entities/article/ui/article-list-item/article-list-item-skeleton';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { Text, TextSize } from '@/shared/ui/text/text';
 
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../article-list-item/article-list-item';
+import { ArticleListItemSkeleton } from '../article-list-item/article-list-item-skeleton';
 
 import styles from './article-list.module.scss';
 

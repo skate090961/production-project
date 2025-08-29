@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Country } from '@/entities/country';
 import { Select } from '@/shared/ui/select/select';
+
+import { Country } from '../../model/types/country';
 
 const options = [
     { value: Country.Russia, content: Country.Russia },

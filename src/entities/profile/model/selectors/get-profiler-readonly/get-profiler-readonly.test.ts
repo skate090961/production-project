@@ -1,5 +1,6 @@
 import { StateSchema } from '@/app/providers/store-provider';
-import { getProfileData } from '@/entities/profile';
+
+import { getProfileData } from '../get-profile-data/get-profile-data';
 
 import { getProfilerReadonly } from './get-profiler-readonly';
 

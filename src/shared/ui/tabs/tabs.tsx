@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { Card, CardTheme } from '@/shared/ui/card/card';
+
+import { Card, CardTheme } from '../card/card';
 
 import styles from './tabs.module.scss';
 
