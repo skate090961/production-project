@@ -6,7 +6,12 @@ const authorization = localStorage.getItem(USER_LS_KEY) || '';
 
 export const $api = axios.create({
     baseURL: __API__,
-    headers: {
-        authorization,
-    },
+});
+
+$api.interceptors.request.use((config) => {
+    if (config.headers) {
+        config.headers.Authorization = authorization;
+    }
+
+    return config;
 });
