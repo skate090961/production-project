@@ -1,25 +1,22 @@
 import React, { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 
-import {
-    ArticleDetailsUI, ArticleList, ArticleView, getArticleDetailsError,
-} from '@/entities/article';
+import { ArticleDetailsUI, ArticleList, getArticleDetailsError } from '@/entities/article';
 import { CommentList } from '@/entities/comment';
 import { AddNewComment } from '@/features/add-new-comment';
-import { RoutePath } from '@/shared/config/route/route-config';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
-import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { Text, TextSize } from '@/shared/ui/text/text';
 import { Page } from '@/widgets/page/page';
 
+import { getCanEditArticle } from '../../model/selectors/article';
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { addNewCommentForArticle } from '../../model/services/add-new-comment-for-article/add-new-comment-for-article';
-import { fetchArticleRecommendations } from
-    '../../model/services/fetch-article-recommendations/fetch-article-recommendations';
+import {
+    fetchArticleRecommendations,
+} from '../../model/services/fetch-article-recommendations/fetch-article-recommendations';
 import { fetchCommentsByArticleId } from
     '../../model/services/fetch-comments-by-article-id/fetch-comments-by-article-id';
 import { articleDetailsCommentsReducer, getArticleComment } from '../../model/slices/article-details-comments-slice';
@@ -27,6 +24,7 @@ import {
     articleDetailsRecommendationsReducer,
     getArticleRecommendations,
 } from '../../model/slices/article-details-recommendations-slice';
+import { ArticleDetailsHeader } from '../article-details-header/article-details-header';
 
 import styles from './article-details.module.scss';
 
@@ -44,7 +42,7 @@ const ArticleDetails = () => {
     const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const articleError = useSelector(getArticleDetailsError);
-    const navigate = useNavigate();
+    const canEdit = useSelector(getCanEditArticle);
 
     useEffect(() => {
         dispatch(fetchCommentsByArticleId(String(id)));
@@ -54,10 +52,6 @@ const ArticleDetails = () => {
     const onSendComment = useCallback((text: string) => {
         dispatch(addNewCommentForArticle(text));
     }, [dispatch]);
-
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     if (!id) {
         return (
@@ -73,12 +67,7 @@ const ArticleDetails = () => {
             removeAfterUnmount
         >
             <Page>
-                <Button
-                    theme={ButtonTheme.OUTLINE}
-                    onClick={onBackToList}
-                >
-                    {t('Назад к списку')}
-                </Button>
+                <ArticleDetailsHeader isEdit={canEdit} id={id} />
                 <ArticleDetailsUI id={id} />
                 <div className={styles.recommendationsWrapper}>
                     <Text size={TextSize.L} title={t('Рекомендуем')} />

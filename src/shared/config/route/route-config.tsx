@@ -2,6 +2,7 @@ import { RouteProps } from 'react-router-dom';
 
 import { About } from '@/pages/about';
 import { ArticleDetails } from '@/pages/article-details';
+import { ArticleEdit } from '@/pages/article-edit';
 import { Articles } from '@/pages/articles';
 import { Main } from '@/pages/main';
 import { NotFoundPage } from '@/pages/not-found-page';
@@ -17,6 +18,8 @@ export enum AppRoutes {
     PROFILE = 'profile',
     ARTICLES = 'articles',
     ARTICLE_DETAILS = 'article_details',
+    ARTICLE_CREATE = 'article_create',
+    ARTICLE_EDIT = 'article_edit',
     NOT_FOUND = 'not_found',
 }
 
@@ -26,6 +29,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.PROFILE]: '/profile/', // + :id
     [AppRoutes.ARTICLES]: '/articles',
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
+    [AppRoutes.ARTICLE_CREATE]: '/articles/new',
+    [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
 
     // last route
     [AppRoutes.NOT_FOUND]: '*',
@@ -53,6 +58,16 @@ export const routeConfig: AppRoutesProps[] = [
     {
         path: `${RoutePath[AppRoutes.ARTICLE_DETAILS]}:id`,
         element: <ArticleDetails />,
+        authOnly: true,
+    },
+    {
+        path: RoutePath[AppRoutes.ARTICLE_EDIT],
+        element: <ArticleEdit />,
+        authOnly: true,
+    },
+    {
+        path: RoutePath[AppRoutes.ARTICLE_CREATE],
+        element: <ArticleEdit />,
         authOnly: true,
     },
 

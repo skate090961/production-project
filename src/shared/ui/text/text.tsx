@@ -6,7 +6,8 @@ import styles from './text.module.scss';
 
 export enum TextTheme {
     PRIMARY = 'primary',
-    ERROR = 'error'
+    ERROR = 'error',
+    INVERTED = 'inverted'
 }
 
 export enum TextAlign {
