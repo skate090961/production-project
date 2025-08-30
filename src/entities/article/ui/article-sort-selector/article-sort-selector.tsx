@@ -1,13 +1,11 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from '@/shared/lib/class-names/class-names';
 import { SortOrder } from '@/shared/types';
 import { Select, SelectOption } from '@/shared/ui/select/select';
+import { HStack } from '@/shared/ui/stack';
 
 import { ArticleSortField } from '../../model/types/article';
-
-import styles from './article-sort-selector.module.scss';
 
 interface ArticleSortSelectorProps {
     className?: string;
@@ -43,7 +41,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     ], [t]);
 
     return (
-        <div className={classNames(styles.root, [className])}>
+        <HStack className={className} gap="16">
             <Select
                 label={t('Сортировать по')}
                 options={sortOptions}
@@ -56,6 +54,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                 value={order}
                 onChange={onChangeOrder}
             />
-        </div>
+        </HStack>
     );
 });

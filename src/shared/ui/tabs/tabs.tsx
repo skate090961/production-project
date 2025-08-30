@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
 
-import { classNames } from '@/shared/lib/class-names/class-names';
-
 import { Card, CardTheme } from '../card/card';
+import { HStack } from '../stack';
 
 import styles from './tabs.module.scss';
 
@@ -27,7 +26,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
     } = props;
 
     return (
-        <div className={classNames(styles.root, [className])}>
+        <HStack className={className} gap="16">
             {tabs?.map((t) => (
                 <Card
                     key={t.value}
@@ -38,6 +37,6 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
                     {t.content}
                 </Card>
             ))}
-        </div>
+        </HStack>
     );
 };

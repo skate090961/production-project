@@ -1,4 +1,6 @@
-import { memo, useCallback } from 'react';
+import {
+    KeyboardEvent, KeyboardEventHandler, memo, useCallback,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
@@ -7,6 +9,7 @@ import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynami
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { Input } from '@/shared/ui/input/input';
+import { VStack } from '@/shared/ui/stack';
 import { Text, TextTheme } from '@/shared/ui/text/text';
 
 import { getLoginError } from '../../model/selectors/get-login-error/get-login-error';
@@ -53,12 +56,22 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         }
     }, [dispatch, onSuccess, password, username]);
 
+    const onFormKeyDown = useCallback((e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'Enter') {
+            onLoginClick();
+        }
+    }, [onLoginClick]);
+
     return (
         <DynamicModuleLoader
             reducers={initReducers}
             removeAfterUnmount
         >
-            <div className={classNames(styles.root, [className])}>
+            <VStack
+                className={classNames(styles.root, [className])}
+                gap="16"
+                onKeyDown={onFormKeyDown}
+            >
                 <div>
                     <Text title={t('Форма авторизации')} />
                     {error && (
@@ -87,7 +100,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 >
                     {t('Войти')}
                 </Button>
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });

@@ -6,6 +6,7 @@ import { classNames } from '@/shared/lib/class-names/class-names';
 import { Avatar } from '@/shared/ui/avatar/avatar';
 import { Input } from '@/shared/ui/input/input';
 import { Loader } from '@/shared/ui/loader/loader';
+import { HStack, VStack } from '@/shared/ui/stack';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/text/text';
 
 import { Profile } from '../../model/types/profile';
@@ -49,33 +50,33 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(styles.root, [styles.loading])}>
+            <HStack className={classNames(styles.root, [styles.loading])} justify="center">
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(styles.root, [styles.error])}>
+            <HStack className={classNames(styles.root, [styles.error])} justify="center">
                 <Text
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}
                     title={t('Произошла ошибка при загрузке профиля')}
                     text={t('Попробуйте обновить страницу')}
                 />
-            </div>
+            </HStack>
         );
     }
 
     return (
         <div className={classNames(styles.root, [className], { [styles.readonly]: !readonly })}>
-            <div className={styles.data}>
-                <div className={styles.avatarWrapper}>
+            <VStack gap="16" align="start">
+                <HStack justify="center" maxWidth>
                     <Avatar
                         src={data?.avatar}
                     />
-                </div>
+                </HStack>
                 <Input
                     value={data?.firstname}
                     placeholder={t('Имя')}
@@ -122,7 +123,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     onChange={onChangeCountry}
                     readonly={readonly}
                 />
-            </div>
+            </VStack>
         </div>
     );
 };

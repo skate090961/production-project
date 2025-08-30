@@ -1,13 +1,11 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from '@/shared/lib/class-names/class-names';
+import { VStack } from '@/shared/ui/stack';
 import { Text } from '@/shared/ui/text/text';
 
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../comment-card/comment-card';
-
-import styles from './comment-list.module.scss';
 
 interface CommentListProps {
     className?: string;
@@ -33,8 +31,10 @@ export const CommentList = memo((props: CommentListProps) => {
     )), [comments, isLoading]);
 
     return (
-        <section className={classNames(styles.root, [className])}>
-            {comments?.length ? renderComments : <Text text={t('Комментарии отсутствуют')} />}
+        <section className={className}>
+            <VStack gap="16">
+                {comments?.length ? renderComments : <Text text={t('Комментарии отсутствуют')} />}
+            </VStack>
         </section>
     );
 });

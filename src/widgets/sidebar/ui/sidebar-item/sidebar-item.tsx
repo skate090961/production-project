@@ -6,6 +6,7 @@ import { getUserAuthData } from '@/entities/user';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
 import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';
+import { HStack } from '@/shared/ui/stack';
 
 import { SidebarItemType } from '../../model/types/sidebar-items';
 
@@ -26,19 +27,21 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     if (item.authOnly && !isAuth) return null;
 
     return (
-        <li>
+        <div>
             <AppLink
                 to={path}
                 theme={AppLinkTheme.SECONDARY}
-                className={classNames(styles.link, [], { [styles.collapsed]: collapsed })}
+                className={classNames('', [], { [styles.collapsed]: collapsed })}
             >
-                <AppIcon Svg={Icon} theme={IconTheme.INVERTED_PRIMARY} />
-                <span
-                    className={styles.linkText}
-                >
-                    {t(translationKey)}
-                </span>
+                <HStack gap="16">
+                    <AppIcon Svg={Icon} theme={IconTheme.INVERTED_PRIMARY} />
+                    <span
+                        className={styles.linkText}
+                    >
+                        {t(translationKey)}
+                    </span>
+                </HStack>
             </AppLink>
-        </li>
+        </div>
     );
 });

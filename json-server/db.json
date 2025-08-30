@@ -277,7 +277,9 @@
       "img": "https://beecrowd.com/wp-content/uploads/2024/04/2022-07-19-Melhores-cursos-de-Python.jpg",
       "views": 1245,
       "createdAt": "12.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -305,7 +307,9 @@
       "img": "https://img2.tapimg.net/post/images/FoOLhtqIOWTzI_i8mflw6ISoS_qf.jpeg?imageMogr2/thumbnail/720x9999%3E/quality/80/format/jpg/interlace/1/ignore-error/1&t=1",
       "views": 876,
       "createdAt": "28.06.2023",
-      "type": ["WEB"],
+      "type": [
+        "WEB"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -328,7 +332,9 @@
       "img": "https://blog.openreplay.com/images/nosql-vs-sql--a-comparison/images/hero.png",
       "views": 932,
       "createdAt": "05.05.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -351,7 +357,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZa4X-f9do3BUrTkoo_bIiApQtBPf-ZJ11Tw&s",
       "views": 2103,
       "createdAt": "15.04.2023",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -374,7 +382,10 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjil7o9xFPp85PilyDNx2Quy22pUILvA7kiw&s",
       "views": 1567,
       "createdAt": "22.03.2023",
-      "type": ["WEB", "DEVOPS"],
+      "type": [
+        "WEB",
+        "DEVOPS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -398,7 +409,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnZADaY7w2-Qcsx-NfnY6LRU4YIcJYKQoZTg&s",
       "views": 1024,
       "createdAt": "08.02.2023",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -421,7 +434,9 @@
       "img": "https://www.smu.edu/-/media/site/meadows/newsstories/2023/bisk-smu-new-masters-program/creative-technology-girl-wearing-vr-goggles.png",
       "views": 789,
       "createdAt": "30.01.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -444,7 +459,10 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqT6av-f-iU5KDlV413hGufnZEnxEix50drQ&s",
       "views": 654,
       "createdAt": "18.01.2023",
-      "type": ["IT", "WEB"],
+      "type": [
+        "IT",
+        "WEB"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -467,7 +485,10 @@
       "img": "https://cdn.ingos.ru/images/blog/blokchejn.jpg",
       "views": 1432,
       "createdAt": "05.01.2023",
-      "type": ["IT", "DEVOPS"],
+      "type": [
+        "IT",
+        "DEVOPS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -490,7 +511,9 @@
       "img": "https://www.alphasoftware.com/hubfs/Low%20Code%20Citizen%20Developer.jpg",
       "views": 1789,
       "createdAt": "25.12.2022",
-      "type": ["AI"],
+      "type": [
+        "AI"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -505,7 +528,6 @@
         }
       ]
     },
-
     {
       "id": "16",
       "userId": "1",
@@ -770,7 +792,9 @@
       "img": "https://beecrowd.com/wp-content/uploads/2024/04/2022-07-19-Melhores-cursos-de-Python.jpg",
       "views": 1245,
       "createdAt": "12.07.2023",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -798,7 +822,10 @@
       "img": "https://img2.tapimg.net/post/images/FoOLhtqIOWTzI_i8mflw6ISoS_qf.jpeg?imageMogr2/thumbnail/720x9999%3E/quality/80/format/jpg/interlace/1/ignore-error/1&t=1",
       "views": 876,
       "createdAt": "28.06.2023",
-      "type": ["IT", "WEB"],
+      "type": [
+        "IT",
+        "WEB"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -821,7 +848,10 @@
       "img": "https://blog.openreplay.com/images/nosql-vs-sql--a-comparison/images/hero.png",
       "views": 932,
       "createdAt": "05.05.2023",
-      "type": ["IT", "AI"],
+      "type": [
+        "IT",
+        "AI"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -844,7 +874,10 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZa4X-f9do3BUrTkoo_bIiApQtBPf-ZJ11Tw&s",
       "views": 2103,
       "createdAt": "15.04.2023",
-      "type": ["IT", "SCIENCE"],
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -867,7 +900,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjil7o9xFPp85PilyDNx2Quy22pUILvA7kiw&s",
       "views": 1567,
       "createdAt": "22.03.2023",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -891,7 +926,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnZADaY7w2-Qcsx-NfnY6LRU4YIcJYKQoZTg&s",
       "views": 1024,
       "createdAt": "08.02.2023",
-      "type": ["DEVOPS"],
+      "type": [
+        "DEVOPS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -914,7 +951,9 @@
       "img": "https://www.smu.edu/-/media/site/meadows/newsstories/2023/bisk-smu-new-masters-program/creative-technology-girl-wearing-vr-goggles.png",
       "views": 789,
       "createdAt": "30.01.2023",
-      "type": ["WEB"],
+      "type": [
+        "WEB"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -937,7 +976,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqT6av-f-iU5KDlV413hGufnZEnxEix50drQ&s",
       "views": 654,
       "createdAt": "18.01.2023",
-      "type": ["AI"],
+      "type": [
+        "AI"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -960,7 +1001,9 @@
       "img": "https://cdn.ingos.ru/images/blog/blokchejn.jpg",
       "views": 1432,
       "createdAt": "05.01.2023",
-      "type": ["DEVOPS"],
+      "type": [
+        "DEVOPS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -983,7 +1026,9 @@
       "img": "https://www.alphasoftware.com/hubfs/Low%20Code%20Citizen%20Developer.jpg",
       "views": 1789,
       "createdAt": "25.12.2022",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1113,6 +1158,24 @@
       "userId": "2",
       "text": "Hi",
       "id": "ukT6jIw"
+    },
+    {
+      "articleId": "29",
+      "userId": "1",
+      "text": "12313",
+      "id": "xGpyVnp"
+    },
+    {
+      "articleId": "29",
+      "userId": "1",
+      "text": "43535353",
+      "id": "7gVn_pI"
+    },
+    {
+      "articleId": "29",
+      "userId": "1",
+      "text": "345435354",
+      "id": "SRFpcFy"
     }
   ],
   "users": [

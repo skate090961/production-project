@@ -7,6 +7,7 @@ import { ArticleDetailsUI, ArticleList, getArticleDetailsError } from '@/entitie
 import { CommentList } from '@/entities/comment';
 import { AddNewComment } from '@/features/add-new-comment';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
+import { VStack } from '@/shared/ui/stack';
 import { Text, TextSize } from '@/shared/ui/text/text';
 import { Page } from '@/widgets/page/page';
 
@@ -69,7 +70,7 @@ const ArticleDetails = () => {
             <Page>
                 <ArticleDetailsHeader isEdit={canEdit} id={id} />
                 <ArticleDetailsUI id={id} />
-                <div className={styles.recommendationsWrapper}>
+                <VStack gap="8">
                     <Text size={TextSize.L} title={t('Рекомендуем')} />
                     <ArticleList
                         articles={recommendations}
@@ -77,16 +78,16 @@ const ArticleDetails = () => {
                         className={styles.recommendations}
                         target="_blank"
                     />
-                </div>
+                </VStack>
                 {!articleError && (
-                    <div className={styles.comments}>
+                    <VStack className={styles.comments} gap="8">
                         <Text title={t('Комментарии')} />
                         <AddNewComment onSendComment={onSendComment} />
                         <CommentList
                             isLoading={commentsIsLoading}
                             comments={comments}
                         />
-                    </div>
+                    </VStack>
                 )}
             </Page>
         </DynamicModuleLoader>

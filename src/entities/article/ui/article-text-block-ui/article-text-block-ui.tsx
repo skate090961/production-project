@@ -1,11 +1,9 @@
 import { memo } from 'react';
 
-import { classNames } from '@/shared/lib/class-names/class-names';
+import { VStack } from '@/shared/ui/stack';
 import { Text } from '@/shared/ui/text/text';
 
 import { ArticleTextBlock } from '../../model/types/article';
-
-import styles from './article-text-block-ui.module.scss';
 
 interface ArticleTextBlockUIProps {
     className?: string;
@@ -13,12 +11,14 @@ interface ArticleTextBlockUIProps {
 }
 
 export const ArticleTextBlockUI = memo(({ className, block }: ArticleTextBlockUIProps) => (
-    <article className={classNames(styles.root, [className])}>
-        {block?.title && (
-            <Text title={block.title} />
-        )}
-        <div className={styles.paragraphs}>
-            {block?.paragraphs.map((p, i) => <Text key={i} text={p} />)}
-        </div>
+    <article className={className}>
+        <VStack gap="16">
+            {block?.title && (
+                <Text title={block.title} />
+            )}
+            <VStack gap="8">
+                {block?.paragraphs.map((p, i) => <Text key={i} text={p} />)}
+            </VStack>
+        </VStack>
     </article>
 ));

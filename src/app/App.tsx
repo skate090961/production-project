@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppRouter } from '@/app/providers/router';
 import { getUserInited, userActions } from '@/entities/user';
 import { classNames } from '@/shared/lib/class-names/class-names';
+import { HStack } from '@/shared/ui/stack';
 import { Navbar } from '@/widgets/navbar';
 import { PageLoader } from '@/widgets/page-loader';
 import { Sidebar } from '@/widgets/sidebar';
@@ -20,10 +21,10 @@ export const App = () => {
         <div className={classNames('app')}>
             <Suspense fallback={<PageLoader />}>
                 <Navbar />
-                <div className="content-page">
+                <HStack>
                     <Sidebar />
                     {inited && <AppRouter />}
-                </div>
+                </HStack>
             </Suspense>
         </div>
     );

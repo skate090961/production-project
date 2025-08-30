@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/button/button';
+import { VStack } from '@/shared/ui/stack';
 import { LangSwitcher } from '@/widgets/lang-switcher';
 import { ThemeSwitcher } from '@/widgets/theme-switcher';
 
@@ -39,9 +40,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             aria-label="Боковая панель"
             data-testid="sidebar"
         >
-            <ul className={styles.links}>
+            <VStack className={styles.links} gap="32" align="center">
                 {itemsList}
-            </ul>
+            </VStack>
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
@@ -52,10 +53,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             >
                 {isCollapsed ? '>' : '<'}
             </Button>
-            <div className={styles.switchers}>
+            <VStack
+                className={styles.switchers}
+                gap="32"
+                justify="center"
+            >
                 <ThemeSwitcher />
                 <LangSwitcher isShort={isCollapsed} />
-            </div>
+            </VStack>
         </menu>
     );
 });

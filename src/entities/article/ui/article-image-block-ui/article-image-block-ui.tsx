@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
+import { VStack } from '@/shared/ui/stack';
 import { Text, TextAlign, TextSize } from '@/shared/ui/text/text';
 
 import { ArticleImageBlock } from '../../model/types/article';
@@ -14,7 +15,9 @@ interface ArticleImageBlockUIProps {
 
 export const ArticleImageBlockUI = memo(({ className, block }: ArticleImageBlockUIProps) => (
     <article className={classNames(styles.root, [className])}>
-        <img src={block?.src} alt={block?.title} className={styles.img} />
-        {block?.title && <Text text={block.title} align={TextAlign.CENTER} size={TextSize.S} /> }
+        <VStack align="center">
+            <img src={block?.src} alt={block?.title} className={styles.img} />
+            {block?.title && <Text text={block.title} align={TextAlign.CENTER} size={TextSize.S} /> }
+        </VStack>
     </article>
 ));

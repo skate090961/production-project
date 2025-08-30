@@ -8,6 +8,7 @@ import { classNames, Mods } from '@/shared/lib/class-names/class-names';
 import { AppIcon } from '../app-icon/app-icon';
 import { Button, ButtonTheme } from '../button/button';
 import { Portal } from '../portal/portal';
+import { HStack, VStack } from '../stack';
 
 import styles from './modal.module.scss';
 
@@ -96,9 +97,14 @@ export const Modal = memo((props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(styles.root, [className], mods)}>
-                <div className={styles.overlay} onClick={closeHandler}>
+                <VStack
+                    align="center"
+                    justify="center"
+                    className={styles.overlay}
+                    onClick={closeHandler}
+                >
                     <div className={styles.modal} onClick={onModalClick}>
-                        <div className={styles.controls}>
+                        <HStack justify="end" className={styles.controls}>
                             <Button
                                 theme={ButtonTheme.CLEAR}
                                 onClick={closeHandler}
@@ -106,12 +112,12 @@ export const Modal = memo((props: ModalProps) => {
                             >
                                 <AppIcon Svg={CloseIcon} />
                             </Button>
-                        </div>
+                        </HStack>
                         <div className={styles.content}>
                             {children}
                         </div>
                     </div>
-                </div>
+                </VStack>
             </div>
         </Portal>
     );

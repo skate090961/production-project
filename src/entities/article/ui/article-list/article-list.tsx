@@ -2,6 +2,7 @@ import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
+import { HStack } from '@/shared/ui/stack';
 import { Text, TextSize } from '@/shared/ui/text/text';
 
 import { Article, ArticleView } from '../../model/types/article';
@@ -49,12 +50,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(styles.root, [className, styles.notFound])}>
+            <HStack
+                className={classNames(styles.root, [className, styles.notFound])}
+                justify="center"
+            >
                 <Text
                     title={t('Статьи не найдены')}
                     size={TextSize.L}
                 />
-            </div>
+            </HStack>
         );
     }
 

@@ -9,6 +9,7 @@ import { AppLink } from '@/shared/ui/app-link/app-link';
 import { Avatar } from '@/shared/ui/avatar/avatar';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { Card } from '@/shared/ui/card/card';
+import { HStack, VStack } from '@/shared/ui/stack';
 import { Text } from '@/shared/ui/text/text';
 
 import {
@@ -43,10 +44,10 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
     );
 
     const views = (
-        <div className={styles.viewsWrapper}>
+        <HStack gap="8">
             <Text text={String(article.views)} />
             <AppIcon Svg={EyeIcon} theme={IconTheme.SECONDARY} />
-        </div>
+        </HStack>
     );
 
     const articlePath = `${RoutePath.article_details}${article.id}`;
@@ -58,34 +59,36 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
 
         return (
             <div className={classNames(styles.root, [className, styles[view]])}>
-                <Card className={styles.card}>
-                    <div className={styles.header}>
-                        <div className={styles.user}>
-                            <Avatar src={article.user.avatar} size={30} />
-                            <Text text={article.user.username} />
+                <Card>
+                    <VStack gap="8">
+                        <HStack justify="between">
+                            <HStack gap="8">
+                                <Avatar src={article.user.avatar} size={30} />
+                                <Text text={article.user.username} />
+                            </HStack>
+                            <Text text={article.createdAt} />
+                        </HStack>
+                        <div>
+                            <Text title={article.title} />
+                            {types}
                         </div>
-                        <Text text={article.createdAt} />
-                    </div>
-                    <div>
-                        <Text title={article.title} />
-                        {types}
-                    </div>
-                    <img src={article.img} alt={article.title} className={styles.img} />
-                    {textBlock && (
-                        <div className={styles.textBlock}>
-                            <ArticleTextBlockUI block={textBlock} />
-                        </div>
-                    )}
-                    <div className={styles.footer}>
-                        <AppLink to={articlePath} target={target}>
-                            <Button
-                                theme={ButtonTheme.OUTLINE}
-                            >
-                                {t('Читать далее...')}
-                            </Button>
-                        </AppLink>
-                        {views}
-                    </div>
+                        <img src={article.img} alt={article.title} className={styles.img} />
+                        {textBlock && (
+                            <div className={styles.textBlock}>
+                                <ArticleTextBlockUI block={textBlock} />
+                            </div>
+                        )}
+                        <HStack justify="between">
+                            <AppLink to={articlePath} target={target}>
+                                <Button
+                                    theme={ButtonTheme.OUTLINE}
+                                >
+                                    {t('Читать далее...')}
+                                </Button>
+                            </AppLink>
+                            {views}
+                        </HStack>
+                    </VStack>
                 </Card>
             </div>
         );
@@ -103,10 +106,10 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
                         <img src={article.img} alt={article.title} />
                         <Text text={article.createdAt} className={styles.date} />
                     </div>
-                    <div className={styles.info}>
+                    <HStack className={styles.info} justify="between">
                         {types}
                         {views}
-                    </div>
+                    </HStack>
                     <Text text={article.title} className={styles.title} />
                 </Card>
             </AppLink>

@@ -13,6 +13,7 @@ import { getUserAuthData } from '@/entities/user';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
+import { HStack } from '@/shared/ui/stack';
 import { Text } from '@/shared/ui/text/text';
 
 import styles from './profile-page-header.module.scss';
@@ -45,10 +46,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(styles.root, [className])}>
+        <HStack className={classNames(styles.root, [className])} justify="between">
             <Text title={t('Профиль')} />
             {canEdit && (
-                <div className={styles.controls}>
+                <HStack gap="16">
                     {readonly ? (
                         <Button
                             theme={ButtonTheme.OUTLINE}
@@ -74,8 +75,8 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                             </Button>
                         </>
                     )}
-                </div>
+                </HStack>
             )}
-        </div>
+        </HStack>
     );
 };

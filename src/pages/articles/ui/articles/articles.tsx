@@ -5,6 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import { ArticleList } from '@/entities/article';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { VStack } from '@/shared/ui/stack';
 import { Page } from '@/widgets/page/page';
 
 import { getArticlesIsLoading, getArticlesView } from '../../model/selectors/articles';
@@ -12,8 +13,6 @@ import { fetchArticlesNewPage } from '../../model/services/fetch-articles-new-pa
 import { initArticles } from '../../model/services/init-articles/init-articles';
 import { articlesReducer, getArticles } from '../../model/slices/articles-slice';
 import { ArticlesFilters } from '../articles-filters/articles-filters';
-
-import styles from './articles.module.scss';
 
 const initReducers: ReducerList = {
     articles: articlesReducer,
@@ -36,13 +35,15 @@ const Article = () => {
 
     return (
         <DynamicModuleLoader reducers={initReducers} removeAfterUnmount={false}>
-            <Page onScrollEnd={onLoadNextPart} className={styles.root}>
-                <ArticlesFilters />
-                <ArticleList
-                    isLoading={isLoading}
-                    articles={articles}
-                    view={view}
-                />
+            <Page onScrollEnd={onLoadNextPart}>
+                <VStack gap="16">
+                    <ArticlesFilters />
+                    <ArticleList
+                        isLoading={isLoading}
+                        articles={articles}
+                        view={view}
+                    />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

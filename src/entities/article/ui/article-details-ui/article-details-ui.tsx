@@ -9,6 +9,7 @@ import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynami
 import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
 import { Avatar } from '@/shared/ui/avatar/avatar';
 import { Skeleton } from '@/shared/ui/skeleton/skeleton';
+import { HStack, VStack } from '@/shared/ui/stack';
 import {
     Text, TextAlign, TextSize, TextTheme,
 } from '@/shared/ui/text/text';
@@ -67,13 +68,13 @@ export const ArticleDetailsUI = memo(({ className, id }: ArticleDetailsProps) =>
 
     if (isLoading) {
         content = (
-            <div className={styles.content}>
+            <VStack gap="16">
                 <Skeleton width={200} height={200} radius="50%" className={styles.avatar} />
                 <Skeleton width={300} height={32} />
                 <Skeleton width={600} height={24} />
                 <Skeleton width="100%" height={200} />
                 <Skeleton width="100%" height={200} />
-            </div>
+            </VStack>
         );
     } else if (error) {
         content = (
@@ -85,7 +86,7 @@ export const ArticleDetailsUI = memo(({ className, id }: ArticleDetailsProps) =>
         );
     } else {
         content = (
-            <div className={styles.content}>
+            <VStack gap="16">
                 <Avatar
                     size={200}
                     src={article?.img}
@@ -96,18 +97,18 @@ export const ArticleDetailsUI = memo(({ className, id }: ArticleDetailsProps) =>
                     text={article?.subtitle}
                     size={TextSize.L}
                 />
-                <div className={styles.info}>
+                <HStack gap="16">
                     <AppIcon Svg={EyeIcon} theme={IconTheme.SECONDARY} />
                     <Text text={String(article?.views)} />
-                </div>
-                <div className={styles.info}>
+                </HStack>
+                <HStack gap="16">
                     <AppIcon Svg={CalendarIcon} theme={IconTheme.SECONDARY} />
                     <Text text={article?.createdAt} />
-                </div>
-                <div className={styles.blocks}>
+                </HStack>
+                <VStack gap="16" maxWidth>
                     {article?.blocks.map(renderBlock)}
-                </div>
-            </div>
+                </VStack>
+            </VStack>
         );
     }
 

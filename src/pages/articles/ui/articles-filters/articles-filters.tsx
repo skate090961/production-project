@@ -13,6 +13,7 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { SortOrder } from '@/shared/types';
 import { Card } from '@/shared/ui/card/card';
 import { Input } from '@/shared/ui/input/input';
+import { HStack, VStack } from '@/shared/ui/stack';
 import { TabItem } from '@/shared/ui/tabs/tabs';
 
 import {
@@ -72,8 +73,8 @@ export const ArticlesFilters = memo(({ className }: ArticlesFiltersProps) => {
     }, [dispatch, debouncedFetchData]);
 
     return (
-        <div className={classNames(styles.root, [className])}>
-            <div className={styles.sortWrapper}>
+        <VStack className={className} gap="16" maxWidth>
+            <HStack justify="between">
                 <ArticleSortSelector
                     order={order}
                     sort={sort}
@@ -84,7 +85,7 @@ export const ArticlesFilters = memo(({ className }: ArticlesFiltersProps) => {
                     view={view}
                     onViewClick={onChangeView}
                 />
-            </div>
+            </HStack>
             <Card>
                 <Input
                     placeholder={t('Поиск')}
@@ -96,6 +97,6 @@ export const ArticlesFilters = memo(({ className }: ArticlesFiltersProps) => {
                 onChange={onChangeType}
                 value={type}
             />
-        </div>
+        </VStack>
     );
 });

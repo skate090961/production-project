@@ -3,10 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
 import { RoutePath } from '@/shared/config/route/route-config';
-import { classNames } from '@/shared/lib/class-names/class-names';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
-
-import styles from './article-details-header.module.scss';
+import { HStack } from '@/shared/ui/stack';
 
 interface ArticleDetailsHeaderProps {
     className?: string;
@@ -27,7 +25,7 @@ export const ArticleDetailsHeader = memo(({ className, isEdit, id }: ArticleDeta
     }, [id, navigate]);
 
     return (
-        <div className={classNames(styles.root, [className])}>
+        <HStack className={className} justify="between">
             <Button
                 theme={ButtonTheme.OUTLINE}
                 onClick={onBackToList}
@@ -42,6 +40,6 @@ export const ArticleDetailsHeader = memo(({ className, isEdit, id }: ArticleDeta
                     {t('Редактировать')}
                 </Button>
             )}
-        </div>
+        </HStack>
     );
 });

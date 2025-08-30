@@ -7,6 +7,7 @@ import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynami
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Button } from '@/shared/ui/button/button';
 import { Input } from '@/shared/ui/input/input';
+import { HStack } from '@/shared/ui/stack';
 
 import {
     getAddNewCommentIsLoading,
@@ -43,7 +44,7 @@ const AddNewComment = memo(({ className, onSendComment }: AddNewCommentProps) =>
 
     return (
         <DynamicModuleLoader reducers={initReducers}>
-            <div className={classNames(styles.root, [className])}>
+            <HStack className={classNames(styles.root, [className])} justify="between">
                 <Input
                     className={styles.input}
                     placeholder={t('Введите текст комментария')}
@@ -57,7 +58,7 @@ const AddNewComment = memo(({ className, onSendComment }: AddNewCommentProps) =>
                 >
                     {t('Отправить')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
 
     );
