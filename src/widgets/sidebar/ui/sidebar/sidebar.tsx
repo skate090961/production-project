@@ -35,12 +35,17 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     )), [isCollapsed, sidebarItemList]);
 
     return (
-        <menu
+        <aside
             className={classNames(styles.root, [className], { [styles.collapsed]: isCollapsed })}
             aria-label="Боковая панель"
             data-testid="sidebar"
         >
-            <VStack className={styles.links} gap="32" align="center">
+            <VStack
+                role="navigation"
+                className={styles.links}
+                gap="32"
+                align="center"
+            >
                 {itemsList}
             </VStack>
             <Button
@@ -61,6 +66,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 <ThemeSwitcher />
                 <LangSwitcher isShort={isCollapsed} />
             </VStack>
-        </menu>
+        </aside>
     );
 });
