@@ -5,7 +5,8 @@ import { buildStyleLoader } from './loaders/buildStyleLoader';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
-    const babelLoader = buildBabelLoader(options);
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+    const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
     const fileLoader = {
         test: /\.(png|jpg|gif|woff|woff2)$/,
@@ -17,19 +18,20 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
-    const tsLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    };
+    // const tsLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/,
+    // };
 
     const styleLoader = buildStyleLoader(options);
 
     return [
-        babelLoader,
-        tsLoader,
-        styleLoader,
-        svgLoader,
         fileLoader,
+        svgLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // tsLoader,
+        styleLoader,
     ];
 }
