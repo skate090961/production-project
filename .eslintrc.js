@@ -64,6 +64,7 @@ module.exports = {
                     'justify',
                     'gap',
                     'role',
+                    'as',
                 ],
             },
         ],

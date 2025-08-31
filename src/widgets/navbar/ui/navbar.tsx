@@ -7,7 +7,9 @@ import { LoginModal } from '@/features/auth-by-username';
 import { RoutePath } from '@/shared/config/route/route-config';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';
+import { Avatar } from '@/shared/ui/avatar/avatar';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
+import { Dropdown } from '@/shared/ui/dropdown/dropdown';
 import { Text, TextTheme } from '@/shared/ui/text/text';
 
 import styles from './navbar.module.scss';
@@ -50,13 +52,22 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    onClick={onLogout}
-                    className={styles.authButton}
-                >
-                    {t('Выйти')}
-                </Button>
+
+                <Dropdown
+                    direction="bottomLeft"
+                    className={styles.dropdown}
+                    trigger={<Avatar size={35} src={authData.avatar} />}
+                    items={[
+                        {
+                            content: t('Профиль'),
+                            href: `${RoutePath.profile}${authData.id}`,
+                        },
+                        {
+                            content: t('Выйти'),
+                            onClick: onLogout,
+                        },
+                    ]}
+                />
             </header>
         );
     }
@@ -73,7 +84,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 onClick={onShowModal}
-                className={styles.authButton}
+                className={styles.dropdown}
             >
                 {t('Войти')}
             </Button>

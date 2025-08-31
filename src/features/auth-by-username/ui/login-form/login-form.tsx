@@ -57,10 +57,14 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [dispatch, onSuccess, password, username]);
 
     const onFormKeyDown = useCallback((e: KeyboardEvent<HTMLDivElement>) => {
+        if (!username || !password) {
+            return;
+        }
+
         if (e.key === 'Enter') {
             onLoginClick();
         }
-    }, [onLoginClick]);
+    }, [onLoginClick, password, username]);
 
     return (
         <DynamicModuleLoader
