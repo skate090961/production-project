@@ -14,5 +14,6 @@
   "Город": "City",
   "Возраст": "Age",
   "Имя пользователя": "Username",
-  "Cсылка на аватар": "Avatar link"
+  "Cсылка на аватар": "Avatar link",
+  "Профиль не найден": "Profile not found"
 }

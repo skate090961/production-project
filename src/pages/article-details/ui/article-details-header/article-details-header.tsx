@@ -1,20 +1,23 @@
 import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 
 import { RoutePath } from '@/shared/config/route/route-config';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { HStack } from '@/shared/ui/stack';
 
+import { getCanEditArticle } from '../../model/selectors/article';
+
 interface ArticleDetailsHeaderProps {
     className?: string;
-    isEdit: boolean;
     id: string;
 }
 
-export const ArticleDetailsHeader = memo(({ className, isEdit, id }: ArticleDetailsHeaderProps) => {
+export const ArticleDetailsHeader = memo(({ className, id }: ArticleDetailsHeaderProps) => {
     const { t } = useTranslation('article');
     const navigate = useNavigate();
+    const canEdit = useSelector(getCanEditArticle);
 
     const onBackToList = useCallback(() => {
         navigate(RoutePath.articles);
@@ -32,7 +35,7 @@ export const ArticleDetailsHeader = memo(({ className, isEdit, id }: ArticleDeta
             >
                 {t('Назад к списку')}
             </Button>
-            {isEdit && (
+            {canEdit && (
                 <Button
                     theme={ButtonTheme.OUTLINE}
                     onClick={onEditArticle}

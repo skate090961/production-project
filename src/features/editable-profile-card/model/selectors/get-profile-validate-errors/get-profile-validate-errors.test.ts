@@ -1,6 +1,6 @@
 import { StateSchema } from '@/app/providers/store-provider';
 
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editable-profile-card-schema';
 
 import { getProfileValidateErrors } from './get-profile-validate-errors';
 

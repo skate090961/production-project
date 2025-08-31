@@ -1,33 +1,17 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { ArticleDetailsUI, ArticleList, getArticleDetailsError } from '@/entities/article';
-import { CommentList } from '@/entities/comment';
-import { AddNewComment } from '@/features/add-new-comment';
+import { ArticleDetailsUI } from '@/entities/article';
+import { ArticleRecommendationsList } from '@/features/article-recommendations-list';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { VStack } from '@/shared/ui/stack';
-import { Text, TextSize } from '@/shared/ui/text/text';
 import { Page } from '@/widgets/page/page';
 
-import { getCanEditArticle } from '../../model/selectors/article';
-import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
-import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
-import { addNewCommentForArticle } from '../../model/services/add-new-comment-for-article/add-new-comment-for-article';
-import {
-    fetchArticleRecommendations,
-} from '../../model/services/fetch-article-recommendations/fetch-article-recommendations';
-import { fetchCommentsByArticleId } from
-    '../../model/services/fetch-comments-by-article-id/fetch-comments-by-article-id';
-import { articleDetailsCommentsReducer, getArticleComment } from '../../model/slices/article-details-comments-slice';
-import {
-    articleDetailsRecommendationsReducer,
-    getArticleRecommendations,
-} from '../../model/slices/article-details-recommendations-slice';
+import { articleDetailsCommentsReducer } from '../../model/slices/article-details-comments-slice';
+import { articleDetailsRecommendationsReducer } from '../../model/slices/article-details-recommendations-slice';
+import { ArticleDetailsComments } from '../article-details-comments/article-details-comments';
 import { ArticleDetailsHeader } from '../article-details-header/article-details-header';
-
-import styles from './article-details.module.scss';
 
 const initReducers: ReducerList = {
     articleDetailsComments: articleDetailsCommentsReducer,
@@ -37,28 +21,12 @@ const initReducers: ReducerList = {
 const ArticleDetails = () => {
     const { t } = useTranslation('article');
     const { id } = useParams<{ id: string }>();
-    const dispatch = useDispatch();
-    const comments = useSelector(getArticleComment.selectAll);
-    const recommendations = useSelector(getArticleRecommendations.selectAll);
-    const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
-    const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-    const articleError = useSelector(getArticleDetailsError);
-    const canEdit = useSelector(getCanEditArticle);
-
-    useEffect(() => {
-        dispatch(fetchCommentsByArticleId(String(id)));
-        dispatch(fetchArticleRecommendations());
-    }, [dispatch, id]);
-
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addNewCommentForArticle(text));
-    }, [dispatch]);
 
     if (!id) {
         return (
-            <div>
+            <Page>
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
     }
 
@@ -68,27 +36,12 @@ const ArticleDetails = () => {
             removeAfterUnmount
         >
             <Page>
-                <ArticleDetailsHeader isEdit={canEdit} id={id} />
-                <ArticleDetailsUI id={id} />
-                <VStack gap="8">
-                    <Text size={TextSize.L} title={t('Рекомендуем')} />
-                    <ArticleList
-                        articles={recommendations}
-                        isLoading={recommendationsIsLoading}
-                        className={styles.recommendations}
-                        target="_blank"
-                    />
+                <VStack gap="16">
+                    <ArticleDetailsHeader id={id} />
+                    <ArticleDetailsUI id={id} />
+                    <ArticleRecommendationsList />
+                    <ArticleDetailsComments id={id} />
                 </VStack>
-                {!articleError && (
-                    <VStack className={styles.comments} gap="8">
-                        <Text title={t('Комментарии')} />
-                        <AddNewComment onSendComment={onSendComment} />
-                        <CommentList
-                            isLoading={commentsIsLoading}
-                            comments={comments}
-                        />
-                    </VStack>
-                )}
             </Page>
         </DynamicModuleLoader>
     );

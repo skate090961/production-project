@@ -4,17 +4,19 @@ import {
 import { AxiosInstance } from 'axios';
 
 import { ArticleDetailsSchema } from '@/entities/article';
-import { ProfileSchema } from '@/entities/profile';
 import { UserSchema } from '@/entities/user';
 import { AddNewCommentSchema } from '@/features/add-new-comment';
 import { LoginSchema } from '@/features/auth-by-username';
+import { ProfileSchema } from '@/features/editable-profile-card';
 import { ScrollSaveSchema } from '@/features/scroll-save';
 import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from '@/pages/article-details';
 import { ArticlesSchema } from '@/pages/articles';
+import { rtkApi } from '@/shared/api/rtk-api';
 
 export interface StateSchema {
     user: UserSchema;
     scrollSave: ScrollSaveSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     // async reducers
     loginForm?: LoginSchema;

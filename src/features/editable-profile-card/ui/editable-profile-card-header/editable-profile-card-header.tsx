@@ -2,27 +2,23 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import {
-    getProfileData,
-    getProfileIsLoading,
-    getProfilerReadonly,
-    profileActions,
-    updateProfileData,
-} from '@/entities/profile';
 import { getUserAuthData } from '@/entities/user';
-import { classNames } from '@/shared/lib/class-names/class-names';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { HStack } from '@/shared/ui/stack';
 import { Text } from '@/shared/ui/text/text';
 
-import styles from './profile-page-header.module.scss';
+import { getProfileData } from '../../model/selectors/get-profile-data/get-profile-data';
+import { getProfileIsLoading } from '../../model/selectors/get-profile-is-loading/get-profile-is-loading';
+import { getProfilerReadonly } from '../../model/selectors/get-profiler-readonly/get-profiler-readonly';
+import { updateProfileData } from '../../model/services/update-profile-data/update-profile-data';
+import { profileActions } from '../../model/slice/profile-slice';
 
 interface ProfilePageHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = ({ className }: ProfilePageHeaderProps) => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
 
@@ -46,7 +42,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <HStack className={classNames(styles.root, [className])} justify="between">
+        <HStack className={className} justify="between">
             <Text title={t('Профиль')} />
             {canEdit && (
                 <HStack gap="16">

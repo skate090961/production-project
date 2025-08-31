@@ -5,6 +5,7 @@ import {
 import { userReducer } from '@/entities/user';
 import { scrollSaveReducer } from '@/features/scroll-save';
 import { $api } from '@/shared/api/api';
+import { rtkApi } from '@/shared/api/rtk-api';
 
 import { createReducerManager } from './reducer-manager';
 import { StateSchema, ThunkExtraArg } from './state-schema';
@@ -17,6 +18,7 @@ export function createReduxStore({ initState }: CreateReduxStoreProps) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         user: userReducer,
         scrollSave: scrollSaveReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);
@@ -33,7 +35,7 @@ export function createReduxStore({ initState }: CreateReduxStoreProps) {
             thunk: {
                 extraArgument,
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore
