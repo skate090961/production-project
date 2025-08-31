@@ -1,4 +1,5 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -27,6 +28,10 @@ export function buildPlugins({
         plugins.push(new ReactRefreshWebpackPlugin());
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
+        }));
+        plugins.push(new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
         }));
     } else {
         plugins.push(
