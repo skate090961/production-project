@@ -1182,6 +1182,12 @@
       "userId": "2",
       "text": "1231232313",
       "id": "Y05HExj"
+    },
+    {
+      "articleId": "20",
+      "userId": "1",
+      "text": "4546465",
+      "id": "d5Q3CH3"
     }
   ],
   "users": [
@@ -1189,21 +1195,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/5d/5d860bf9d0aafde4b7f0b432ca13c91c89c0998b_full.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/b0/b0e70ccd2ce91bda51f38af2dbdfdb9c9bc62269.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://avatars.steamstatic.com/e3472b04ec2b67169ce2f5a9402751499491eed6_full.jpg"
     }
   ],
