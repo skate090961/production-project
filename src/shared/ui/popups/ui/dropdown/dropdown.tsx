@@ -4,10 +4,12 @@ import { ReactNode } from 'react';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { DropdownDirection } from '@/shared/types/ui';
 
-import { HStack } from '../stack';
+import { HStack } from '../../../stack';
+import { directionStyles } from '../../styles/consts';
 
 import { DropdownItem, IDropdownItem } from './dropdown-item';
 
+import popupStyles from '../../styles/popup.module.scss';
 import styles from './dropdown.module.scss';
 
 interface DropdownProps {
@@ -16,13 +18,6 @@ interface DropdownProps {
     items: IDropdownItem[];
     direction?: DropdownDirection;
 }
-
-const directionStyles: Record<DropdownDirection, string> = {
-    bottomLeft: styles.bottomLeft,
-    bottomRight: styles.bottomRight,
-    topLeft: styles.topLeft,
-    topRight: styles.topRight,
-};
 
 export const Dropdown = (props: DropdownProps) => {
     const {
@@ -33,9 +28,9 @@ export const Dropdown = (props: DropdownProps) => {
     } = props;
 
     return (
-        <Menu as="menu" className={classNames(styles.root, [className])}>
+        <Menu as="menu" className={classNames(popupStyles.root, [className])}>
             <HStack>
-                <Menu.Button className={styles.trigger}>
+                <Menu.Button className={popupStyles.trigger}>
                     {trigger}
                 </Menu.Button>
             </HStack>

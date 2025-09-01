@@ -1,17 +1,18 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entities/user';
+import { getUserAuthData } from '@/entities/user';
 import { LoginModal } from '@/features/auth-by-username';
+import { AvatarMenu } from '@/features/avatar-menu';
+import BellIcon from '@/shared/assets/icons/bell.svg';
 import { RoutePath } from '@/shared/config/route/route-config';
 import { classNames } from '@/shared/lib/class-names/class-names';
+import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
 import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';
-import { Avatar } from '@/shared/ui/avatar/avatar';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
-import { Dropdown } from '@/shared/ui/dropdown/dropdown';
+import { Popover } from '@/shared/ui/popups';
+import { HStack } from '@/shared/ui/stack';
 import { Text, TextTheme } from '@/shared/ui/text/text';
 
 import styles from './navbar.module.scss';
@@ -23,10 +24,7 @@ interface NavbarProps {
 export const Navbar = memo(({ className }: NavbarProps) => {
     const [isAuthModal, setIsAuthModal] = useState(false);
     const { t } = useTranslation();
-    const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
-    const isAdmin = useSelector(isUserAdmin);
-    const isManager = useSelector(isUserManager);
 
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
@@ -35,12 +33,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
-
-    const onLogout = useCallback(() => {
-        dispatch(userActions.logout());
-    }, [dispatch]);
-
-    const isAdminPanelAvailable = isAdmin || isManager;
 
     if (authData) {
         return (
@@ -52,34 +44,29 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     theme={TextTheme.INVERTED}
                     className={styles.logo}
                 />
-                <AppLink
-                    to={RoutePath.article_create}
-                    theme={AppLinkTheme.SECONDARY}
-                >
-                    {t('Создать статью')}
-                </AppLink>
+                <HStack justify="between" maxWidth>
+                    <AppLink
+                        to={RoutePath.article_create}
+                        theme={AppLinkTheme.SECONDARY}
+                    >
+                        {t('Создать статью')}
+                    </AppLink>
+                    <HStack gap="16">
+                        <Popover
+                            direction="bottomLeft"
+                            trigger={(
+                                <Button theme={ButtonTheme.CLEAR}>
+                                    <AppIcon
+                                        Svg={BellIcon}
+                                        theme={IconTheme.INVERTED_PRIMARY}
+                                    />
+                                </Button>
+                            )}
+                        />
 
-                <Dropdown
-                    direction="bottomLeft"
-                    className={styles.dropdown}
-                    trigger={<Avatar size={35} src={authData.avatar} />}
-                    items={[
-                        ...(isAdminPanelAvailable ? [
-                            {
-                                content: t('Админка'),
-                                href: RoutePath.admin_panel,
-                            },
-                        ] : []),
-                        {
-                            content: t('Профиль'),
-                            href: `${RoutePath.profile}${authData.id}`,
-                        },
-                        {
-                            content: t('Выйти'),
-                            onClick: onLogout,
-                        },
-                    ]}
-                />
+                        <AvatarMenu />
+                    </HStack>
+                </HStack>
             </header>
         );
     }

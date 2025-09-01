@@ -3,8 +3,9 @@ import { Fragment, ReactNode } from 'react';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
 
-import { AppLink } from '../app-link/app-link';
+import { AppLink } from '../../../app-link/app-link';
 
+import popupStyles from '../../styles/popup.module.scss';
 import styles from './dropdown.module.scss';
 
 export interface IDropdownItem {
@@ -21,8 +22,8 @@ interface DropdownItemProps {
 export const DropdownItem = ({ item }: DropdownItemProps) => {
     const content = ({ active }: { active: boolean }) => {
         const mods = {
-            [styles.active]: active,
-            [styles.disabled]: item.disabled,
+            [popupStyles.active]: active,
+            [popupStyles.disabled]: item.disabled,
         };
         if (item.href) {
             return (
