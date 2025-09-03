@@ -5,13 +5,11 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/user';
 import { LoginModal } from '@/features/auth-by-username';
 import { AvatarMenu } from '@/features/avatar-menu';
-import BellIcon from '@/shared/assets/icons/bell.svg';
+import { NotificationsButton } from '@/features/notifications-button/notifications-button';
 import { RoutePath } from '@/shared/config/route/route-config';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
 import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
-import { Popover } from '@/shared/ui/popups';
 import { HStack } from '@/shared/ui/stack';
 import { Text, TextTheme } from '@/shared/ui/text/text';
 
@@ -52,18 +50,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                         {t('Создать статью')}
                     </AppLink>
                     <HStack gap="16">
-                        <Popover
-                            direction="bottomLeft"
-                            trigger={(
-                                <Button theme={ButtonTheme.CLEAR}>
-                                    <AppIcon
-                                        Svg={BellIcon}
-                                        theme={IconTheme.INVERTED_PRIMARY}
-                                    />
-                                </Button>
-                            )}
-                        />
-
+                        <NotificationsButton />
                         <AvatarMenu />
                     </HStack>
                 </HStack>

@@ -65,6 +65,7 @@ module.exports = {
                     'gap',
                     'role',
                     'as',
+                    'radius',
                 ],
             },
         ],
