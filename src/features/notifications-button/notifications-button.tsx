@@ -3,6 +3,7 @@ import { isMobile } from 'react-device-detect';
 
 import { NotificationList } from '@/entities/notification';
 import BellIcon from '@/shared/assets/icons/bell.svg';
+import { AnimationProvider } from '@/shared/lib/components/animation-provider';
 import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
 import { Button, ButtonTheme } from '@/shared/ui/button/button';
 import { Drawer } from '@/shared/ui/drawer/drawer';
@@ -35,7 +36,7 @@ export const NotificationsButton = memo(({ className }: NotificationsButtonProps
 
     if (isMobile) {
         return (
-            <>
+            <AnimationProvider>
                 {trigger}
                 <Drawer
                     isOpen={isOpen}
@@ -44,8 +45,7 @@ export const NotificationsButton = memo(({ className }: NotificationsButtonProps
                 >
                     <NotificationList />
                 </Drawer>
-            </>
-
+            </AnimationProvider>
         );
     }
 
