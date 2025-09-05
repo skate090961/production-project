@@ -7,8 +7,9 @@ import { classNames, Mods } from '@/shared/lib/class-names/class-names';
 
 import { AppIcon } from '../app-icon/app-icon';
 import { Button, ButtonTheme } from '../button/button';
+import { Overlay } from '../overlay/overlay';
 import { Portal } from '../portal/portal';
-import { HStack, VStack } from '../stack';
+import { HStack } from '../stack';
 
 import styles from './modal.module.scss';
 
@@ -30,9 +31,9 @@ export const Modal = memo((props: ModalProps) => {
         children,
         isLazy,
     } = props;
-
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -48,16 +49,20 @@ export const Modal = memo((props: ModalProps) => {
         }
     }, [closeHandler]);
 
-    const onModalClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
-
     useEffect(() => {
         if (isOpen) {
             setIsMounted(true);
+            timerRef.current = setTimeout(() => setIsVisible(true), ANIMATION_DELAY);
+        } else {
+            setIsVisible(false);
+            setIsMounted(false);
         }
 
-        return () => setIsMounted(false);
+        return () => {
+            if (timerRef.current) {
+                clearTimeout(timerRef.current);
+            }
+        };
     }, [isOpen]);
 
     useEffect(() => {
@@ -86,7 +91,7 @@ export const Modal = memo((props: ModalProps) => {
     }, [isClosing, onClose]);
 
     const mods: Mods = {
-        [styles.opened]: isOpen,
+        [styles.opened]: isVisible,
         [styles.closed]: isClosing,
     };
 
@@ -97,27 +102,21 @@ export const Modal = memo((props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(styles.root, [className], mods)}>
-                <VStack
-                    align="center"
-                    justify="center"
-                    className={styles.overlay}
-                    onClick={closeHandler}
-                >
-                    <div className={styles.modal} onClick={onModalClick}>
-                        <HStack justify="end" className={styles.controls}>
-                            <Button
-                                theme={ButtonTheme.CLEAR}
-                                onClick={closeHandler}
-                                aria-label="Закрыть модальное окно"
-                            >
-                                <AppIcon Svg={CloseIcon} />
-                            </Button>
-                        </HStack>
-                        <div className={styles.content}>
-                            {children}
-                        </div>
+                <Overlay onClick={closeHandler} />
+                <div className={styles.modal}>
+                    <HStack justify="end" className={styles.controls}>
+                        <Button
+                            theme={ButtonTheme.CLEAR}
+                            onClick={closeHandler}
+                            aria-label="Закрыть модальное окно"
+                        >
+                            <AppIcon Svg={CloseIcon} />
+                        </Button>
+                    </HStack>
+                    <div className={styles.content}>
+                        {children}
                     </div>
-                </VStack>
+                </div>
             </div>
         </Portal>
     );
