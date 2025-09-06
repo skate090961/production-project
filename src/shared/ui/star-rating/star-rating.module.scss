@@ -1,0 +1,16 @@
+.root {
+    width: fit-content;
+}
+
+.icon {
+    cursor: pointer;
+    fill: none;
+}
+
+.hovered {
+    fill: var(--primary-color);
+}
+
+.selected {
+    cursor: auto;
+}

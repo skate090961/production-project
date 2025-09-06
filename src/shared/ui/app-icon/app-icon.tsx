@@ -1,4 +1,6 @@
-import React, { memo } from 'react';
+import React, {
+    FunctionComponent, memo, SVGAttributes, SVGProps,
+} from 'react';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
 
@@ -10,12 +12,30 @@ export enum IconTheme {
     INVERTED_PRIMARY = 'invertedPrimary'
 }
 
-interface IconProps {
+interface IconProps extends SVGProps<SVGSVGElement> {
     className?: string;
-    Svg: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
-    theme?: IconTheme
+    Svg: FunctionComponent<SVGAttributes<SVGElement>>;
+    theme?: IconTheme;
+    width?: number;
+    height?: number;
 }
 
-export const AppIcon = memo(({ className, Svg, theme = IconTheme.PRIMARY }: IconProps) => (
-    <Svg className={classNames(styles.root, [className, styles[theme]])} />
-));
+export const AppIcon = memo((props: IconProps) => {
+    const {
+        className,
+        Svg,
+        theme = IconTheme.PRIMARY,
+        width = 24,
+        height = 24,
+        ...otherProps
+    } = props;
+
+    return (
+        <Svg
+            width={width}
+            height={height}
+            className={classNames('', [className, styles[theme]])}
+            {...otherProps}
+        />
+    );
+});

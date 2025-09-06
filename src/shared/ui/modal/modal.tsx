@@ -14,7 +14,7 @@ import styles from './modal.module.scss';
 
 interface ModalProps {
     className?: string;
-    isOpen: boolean;
+    isOpen?: boolean;
     onClose?: () => void;
     isLazy?: boolean;
     children?: ReactNode;
