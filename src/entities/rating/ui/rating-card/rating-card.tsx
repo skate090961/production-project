@@ -16,7 +16,8 @@ interface RatingCardProps {
     title?: string;
     feedbackTitle?: string;
     onAccept?: (starsCount: number, feedback?: string) => void;
-    isLoading?: boolean;
+    onCancel?: (starsCount: number) => void;
+    rate?: number;
 }
 
 export const RatingCard = (props: RatingCardProps) => {
@@ -25,13 +26,14 @@ export const RatingCard = (props: RatingCardProps) => {
         feedbackTitle,
         title,
         onAccept,
-        isLoading,
+        onCancel,
+        rate = 0,
     } = props;
 
     const { t } = useTranslation();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
     const hasFeedback = Boolean(feedbackTitle);
@@ -49,14 +51,21 @@ export const RatingCard = (props: RatingCardProps) => {
         }
     }, [hasFeedback, onAccept, onToggleModal]);
 
-    const handleAccept = useCallback(() => {
+    const acceptHandle = useCallback(() => {
         onToggleModal();
         onAccept?.(starsCount, feedback);
     }, [feedback, onAccept, onToggleModal, starsCount]);
 
+    const cancelHandle = useCallback(() => {
+        onToggleModal();
+        onCancel?.(starsCount);
+    }, [onCancel, onToggleModal, starsCount]);
+
     const onChangeFeedback = useCallback((value: string) => {
         setFeedback(value);
     }, []);
+
+    const titleMessage = starsCount ? t('Спасибо за оценку!') : title;
 
     const modalContent = (
         <VStack gap="32">
@@ -64,7 +73,6 @@ export const RatingCard = (props: RatingCardProps) => {
             <Input
                 placeholder={t('Ваш отзыв')}
                 onChange={onChangeFeedback}
-                disabled={isLoading}
             />
         </VStack>
     );
@@ -72,21 +80,21 @@ export const RatingCard = (props: RatingCardProps) => {
     return (
         <Card className={className}>
             <VStack align="center" gap="8">
-                <Text title={title} />
+                <Text title={titleMessage} />
                 <StarRating
                     size={35}
                     onSelect={onSelectStars}
+                    selectedStars={starsCount}
                 />
             </VStack>
             {isMobile ? (
                 <Drawer
                     isOpen={isModalOpen}
-                    onClose={onToggleModal}
+                    onClose={cancelHandle}
                 >
                     {modalContent}
                     <Button
-                        onClick={handleAccept}
-                        disabled={isLoading}
+                        onClick={acceptHandle}
                         fullWidth
                     >
                         {t('Отправить')}
@@ -95,18 +103,24 @@ export const RatingCard = (props: RatingCardProps) => {
             ) : (
                 <Modal
                     isOpen={isModalOpen}
-                    onClose={onToggleModal}
+                    onClose={cancelHandle}
                     isLazy
                 >
-                    {modalContent}
-                    <HStack justify="end">
-                        <Button
-                            onClick={handleAccept}
-                            disabled={isLoading}
-                        >
-                            {t('Отправить')}
-                        </Button>
-                    </HStack>
+                    <VStack gap="16">
+                        {modalContent}
+                        <HStack justify="end" gap="8">
+                            <Button
+                                onClick={cancelHandle}
+                            >
+                                {t('Отменить')}
+                            </Button>
+                            <Button
+                                onClick={acceptHandle}
+                            >
+                                {t('Отправить')}
+                            </Button>
+                        </HStack>
+                    </VStack>
                 </Modal>
             )}
         </Card>
