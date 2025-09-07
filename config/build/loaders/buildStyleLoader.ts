@@ -5,6 +5,7 @@ import { BuildOptions } from '../types/config';
 export function buildStyleLoader({ isDev }: BuildOptions) {
     return {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: [
             isDev
                 ? 'style-loader'

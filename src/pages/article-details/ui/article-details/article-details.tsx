@@ -10,13 +10,11 @@ import { VStack } from '@/shared/ui/stack';
 import { Page } from '@/widgets/page';
 
 import { articleDetailsCommentsReducer } from '../../model/slices/article-details-comments-slice';
-import { articleDetailsRecommendationsReducer } from '../../model/slices/article-details-recommendations-slice';
 import { ArticleDetailsComments } from '../article-details-comments/article-details-comments';
 import { ArticleDetailsHeader } from '../article-details-header/article-details-header';
 
 const initReducers: ReducerList = {
     articleDetailsComments: articleDetailsCommentsReducer,
-    articleDetailsRecommendations: articleDetailsRecommendationsReducer,
 };
 
 const ArticleDetails = () => {

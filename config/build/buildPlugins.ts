@@ -12,6 +12,8 @@ import { BuildOptions } from './types/config';
 export function buildPlugins({
     paths, isDev, apiUrl, project,
 }: BuildOptions): WebpackPluginInstance[] {
+    const isProd = !isDev;
+
     const plugins = [
         new HTMLWebpackPlugin({
             template: paths.html,
@@ -43,7 +45,9 @@ export function buildPlugins({
             exclude: /node_modules/,
             failOnError: true,
         }));
-    } else {
+    }
+
+    if (isProd) {
         plugins.push(
             new MiniCssExtractPlugin({
                 filename: 'css/[name].[contenthash:8].css',
