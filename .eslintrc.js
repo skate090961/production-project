@@ -103,7 +103,7 @@ module.exports = {
                 warnOnUnassignedImports: true,
             },
         ],
-        'skate0909-plugin/path-checker': 'error',
+        'skate0909-plugin/path-checker': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
