@@ -1334,6 +1334,12 @@
       "userId": "1",
       "rate": 2,
       "id": "MnzQN79"
+    },
+    {
+      "articleId": "6",
+      "userId": "1",
+      "rate": 4,
+      "id": "iZL052f"
     }
   ],
   "profile-ratings": [
@@ -1350,6 +1356,13 @@
       "feedback": "Отличная статья",
       "userId": "1",
       "profileId": "2"
+    },
+    {
+      "profileId": "3",
+      "feedback": "плохой менеджер",
+      "userId": "1",
+      "rate": 1,
+      "id": "QQpiPKy"
     }
   ]
 }

@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
 import { EditableProfileCard } from '@/features/editable-profile-card';
+import { ProfileRating } from '@/features/profile-rating';
+import { VStack } from '@/shared/ui/stack';
 import { Text } from '@/shared/ui/text/text';
 import { Page } from '@/widgets/page/page';
 
@@ -16,7 +18,10 @@ const Profile = () => {
 
     return (
         <Page>
-            <EditableProfileCard id={id} />
+            <VStack gap="16">
+                <EditableProfileCard id={id} />
+                <ProfileRating profileId={id} />
+            </VStack>
         </Page>
     );
 };

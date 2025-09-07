@@ -1,15 +1,12 @@
 import { useCallback, useState } from 'react';
-import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@/shared/ui/button/button';
 import { Card } from '@/shared/ui/card/card';
-import { Drawer } from '@/shared/ui/drawer/drawer';
-import { Input } from '@/shared/ui/input/input';
-import { Modal } from '@/shared/ui/modal/modal';
-import { HStack, VStack } from '@/shared/ui/stack';
+import { VStack } from '@/shared/ui/stack';
 import { StarRating } from '@/shared/ui/star-rating/star-rating';
 import { Text } from '@/shared/ui/text/text';
+
+import { Feedback } from '../feedback/feedback';
 
 interface RatingCardProps {
     className?: string;
@@ -34,7 +31,6 @@ export const RatingCard = (props: RatingCardProps) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [starsCount, setStarsCount] = useState(rate);
-    const [feedback, setFeedback] = useState('');
 
     const hasFeedback = Boolean(feedbackTitle);
 
@@ -51,31 +47,7 @@ export const RatingCard = (props: RatingCardProps) => {
         }
     }, [hasFeedback, onAccept, onToggleModal]);
 
-    const acceptHandle = useCallback(() => {
-        onToggleModal();
-        onAccept?.(starsCount, feedback);
-    }, [feedback, onAccept, onToggleModal, starsCount]);
-
-    const cancelHandle = useCallback(() => {
-        onToggleModal();
-        onCancel?.(starsCount);
-    }, [onCancel, onToggleModal, starsCount]);
-
-    const onChangeFeedback = useCallback((value: string) => {
-        setFeedback(value);
-    }, []);
-
     const titleMessage = starsCount ? t('Спасибо за оценку!') : title;
-
-    const modalContent = (
-        <VStack gap="32">
-            <Text title={feedbackTitle} />
-            <Input
-                placeholder={t('Ваш отзыв')}
-                onChange={onChangeFeedback}
-            />
-        </VStack>
-    );
 
     return (
         <Card className={className}>
@@ -87,42 +59,14 @@ export const RatingCard = (props: RatingCardProps) => {
                     selectedStars={starsCount}
                 />
             </VStack>
-            {isMobile ? (
-                <Drawer
-                    isOpen={isModalOpen}
-                    onClose={cancelHandle}
-                >
-                    {modalContent}
-                    <Button
-                        onClick={acceptHandle}
-                        fullWidth
-                    >
-                        {t('Отправить')}
-                    </Button>
-                </Drawer>
-            ) : (
-                <Modal
-                    isOpen={isModalOpen}
-                    onClose={cancelHandle}
-                    isLazy
-                >
-                    <VStack gap="16">
-                        {modalContent}
-                        <HStack justify="end" gap="8">
-                            <Button
-                                onClick={cancelHandle}
-                            >
-                                {t('Отменить')}
-                            </Button>
-                            <Button
-                                onClick={acceptHandle}
-                            >
-                                {t('Отправить')}
-                            </Button>
-                        </HStack>
-                    </VStack>
-                </Modal>
-            )}
+            <Feedback
+                feedbackTitle={feedbackTitle}
+                starsCount={starsCount}
+                onCloseModal={onToggleModal}
+                isModalOpen={isModalOpen}
+                onCancel={onCancel}
+                onAccept={onAccept}
+            />
         </Card>
     );
 };

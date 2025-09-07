@@ -58,7 +58,7 @@ const ArticleRating = (props: ArticleRatingProps) => {
     }, [handleRateArticle]);
 
     if (articleRatingIsLoading) {
-        return <Skeleton width="100%" height={120} />;
+        return <Skeleton height={120} />;
     }
 
     const rating = articleRating?.[0];
