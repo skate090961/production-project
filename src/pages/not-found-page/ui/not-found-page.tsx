@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { Page } from '@/widgets/page/page';
+import { Page } from '@/widgets/page';
 
 import styles from './not-found-page.module.scss';
 

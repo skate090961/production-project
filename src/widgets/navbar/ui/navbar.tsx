@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/user';
 import { LoginModal } from '@/features/auth-by-username';
 import { AvatarMenu } from '@/features/avatar-menu';
-import { NotificationsButton } from '@/features/notifications-button/notifications-button';
+import { NotificationsButton } from '@/features/notifications-button';
 import { RoutePath } from '@/shared/config/route/route-config';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';

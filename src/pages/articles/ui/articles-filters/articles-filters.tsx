@@ -3,11 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import {
-    ArticleSortField, ArticleSortSelector, ArticleType, ArticleView,
+    ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView,
 } from '@/entities/article';
-import { ArticleTypeTabs } from '@/entities/article/ui/article-type-tabs';
 import { ArticlesViewSelector } from '@/features/articles-view-selector';
-import { classNames } from '@/shared/lib/class-names/class-names';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { SortOrder } from '@/shared/types';
@@ -21,8 +19,6 @@ import {
 } from '../../model/selectors/articles';
 import { fetchArticles } from '../../model/services/fetch-articles-list/fetch-articles-list';
 import { articlesActions } from '../../model/slices/articles-slice';
-
-import styles from './articles-filters.module.scss';
 
 interface ArticlesFiltersProps {
     className?: string;

@@ -6,7 +6,7 @@ import { EditableProfileCard } from '@/features/editable-profile-card';
 import { ProfileRating } from '@/features/profile-rating';
 import { VStack } from '@/shared/ui/stack';
 import { Text } from '@/shared/ui/text/text';
-import { Page } from '@/widgets/page/page';
+import { Page } from '@/widgets/page';
 
 const Profile = () => {
     const { id } = useParams<{id: string}>();

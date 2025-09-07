@@ -2,9 +2,7 @@ import React, { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ArticleList } from '@/entities/article';
-import {
-    fetchArticleRecommendations,
-} from '@/pages/article-details/model/services/fetch-article-recommendations/fetch-article-recommendations';
+import { fetchArticleRecommendations } from '@/pages/article-details';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { VStack } from '@/shared/ui/stack';
 import { Text, TextSize } from '@/shared/ui/text/text';

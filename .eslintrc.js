@@ -104,6 +104,7 @@ module.exports = {
             },
         ],
         'skate0909-plugin/path-checker': ['error', { alias: '@' }],
+        'skate0909-plugin/public-api-imports': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
