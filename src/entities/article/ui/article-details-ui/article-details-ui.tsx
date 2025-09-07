@@ -6,13 +6,13 @@ import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
-import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
-import { Avatar } from '@/shared/ui/avatar/avatar';
-import { Skeleton } from '@/shared/ui/skeleton/skeleton';
+import { AppIcon, IconTheme } from '@/shared/ui/app-icon';
+import { Avatar } from '@/shared/ui/avatar';
+import { Skeleton } from '@/shared/ui/skeleton';
 import { HStack, VStack } from '@/shared/ui/stack';
 import {
     Text, TextAlign, TextSize, TextTheme,
-} from '@/shared/ui/text/text';
+} from '@/shared/ui/text';
 
 import {
     getArticleDetailsData,

@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { VStack } from '@/shared/ui/stack';
-import { Text } from '@/shared/ui/text/text';
+import { Text } from '@/shared/ui/text';
 
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../comment-card/comment-card';

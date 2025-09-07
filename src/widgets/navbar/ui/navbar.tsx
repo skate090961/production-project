@@ -8,10 +8,10 @@ import { AvatarMenu } from '@/features/avatar-menu';
 import { NotificationsButton } from '@/features/notifications-button';
 import { RoutePath } from '@/shared/consts/router';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';
-import { Button, ButtonTheme } from '@/shared/ui/button/button';
+import { AppLink, AppLinkTheme } from '@/shared/ui/app-link';
+import { Button, ButtonTheme } from '@/shared/ui/button';
 import { HStack } from '@/shared/ui/stack';
-import { Text, TextTheme } from '@/shared/ui/text/text';
+import { Text, TextTheme } from '@/shared/ui/text';
 
 import styles from './navbar.module.scss';
 

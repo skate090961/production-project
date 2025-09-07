@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { HStack } from '@/shared/ui/stack';
-import { Text, TextSize } from '@/shared/ui/text/text';
+import { Text, TextSize } from '@/shared/ui/text';
 
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../article-list-item/article-list-item';

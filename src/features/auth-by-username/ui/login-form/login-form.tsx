@@ -7,10 +7,10 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Button, ButtonTheme } from '@/shared/ui/button/button';
-import { Input } from '@/shared/ui/input/input';
+import { Button, ButtonTheme } from '@/shared/ui/button';
+import { Input } from '@/shared/ui/input';
 import { VStack } from '@/shared/ui/stack';
-import { Text, TextTheme } from '@/shared/ui/text/text';
+import { Text, TextTheme } from '@/shared/ui/text';
 
 import { getLoginError } from '../../model/selectors/get-login-error/get-login-error';
 import { getLoginIsLoading } from '../../model/selectors/get-login-is-loading/get-login-is-loading';

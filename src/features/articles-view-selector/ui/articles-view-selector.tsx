@@ -4,8 +4,8 @@ import { ArticleView } from '@/entities/article';
 import BurgerIcon from '@/shared/assets/icons/burger.svg';
 import GridIcon from '@/shared/assets/icons/grid.svg';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { AppIcon } from '@/shared/ui/app-icon/app-icon';
-import { Button, ButtonTheme } from '@/shared/ui/button/button';
+import { AppIcon } from '@/shared/ui/app-icon';
+import { Button, ButtonTheme } from '@/shared/ui/button';
 
 import styles from './articles-view-selector.module.scss';
 

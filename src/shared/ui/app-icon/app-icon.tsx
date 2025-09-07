@@ -1,5 +1,8 @@
 import React, {
-    FunctionComponent, memo, SVGAttributes, SVGProps,
+    FunctionComponent,
+    memo,
+    SVGAttributes,
+    SVGProps,
 } from 'react';
 
 import { classNames } from '@/shared/lib/class-names/class-names';

@@ -8,7 +8,7 @@ import { AddNewComment } from '@/features/add-new-comment';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { VStack } from '@/shared/ui/stack';
-import { Text } from '@/shared/ui/text/text';
+import { Text } from '@/shared/ui/text';
 
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors/comments';
 import { addNewCommentForArticle } from '../../model/services/add-new-comment-for-article/add-new-comment-for-article';

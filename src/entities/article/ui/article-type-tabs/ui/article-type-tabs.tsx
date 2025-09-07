@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { TabItem, Tabs } from '@/shared/ui/tabs/tabs';
+import { TabItem, Tabs } from '@/shared/ui/tabs';
 
 import { ArticleType } from '../../../model/types/article';
 

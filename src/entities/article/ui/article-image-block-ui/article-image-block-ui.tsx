@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { VStack } from '@/shared/ui/stack';
-import { Text, TextAlign, TextSize } from '@/shared/ui/text/text';
+import { Text, TextAlign, TextSize } from '@/shared/ui/text';
 
 import { ArticleImageBlock } from '../../model/types/article';
 

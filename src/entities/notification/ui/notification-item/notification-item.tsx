@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
 import { getRedirectLink } from '@/shared/lib/url/get-redirect-link/get-redirect-link';
-import { AppLink } from '@/shared/ui/app-link/app-link';
-import { Card, CardTheme } from '@/shared/ui/card/card';
-import { Text } from '@/shared/ui/text/text';
+import { AppLink } from '@/shared/ui/app-link';
+import { Card, CardTheme } from '@/shared/ui/card';
+import { Text } from '@/shared/ui/text';
 
 import { INotification } from '../../model/types/notification';
 

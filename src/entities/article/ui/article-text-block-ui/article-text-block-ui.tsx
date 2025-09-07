@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import { VStack } from '@/shared/ui/stack';
-import { Text } from '@/shared/ui/text/text';
+import { Text } from '@/shared/ui/text';
 
 import { ArticleTextBlock } from '../../model/types/article';
 

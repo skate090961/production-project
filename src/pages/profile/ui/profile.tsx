@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { EditableProfileCard } from '@/features/editable-profile-card';
 import { ProfileRating } from '@/features/profile-rating';
 import { VStack } from '@/shared/ui/stack';
-import { Text } from '@/shared/ui/text/text';
+import { Text } from '@/shared/ui/text';
 import { Page } from '@/widgets/page';
 
 const Profile = () => {

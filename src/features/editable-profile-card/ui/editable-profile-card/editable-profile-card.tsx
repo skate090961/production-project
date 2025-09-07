@@ -9,7 +9,7 @@ import { getUserAuthData } from '@/entities/user';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { VStack } from '@/shared/ui/stack';
-import { Text, TextTheme } from '@/shared/ui/text/text';
+import { Text, TextTheme } from '@/shared/ui/text';
 
 import { getProfileError } from '../../model/selectors/get-profile-error/get-profile-error';
 import { getProfileForm } from '../../model/selectors/get-profile-form/get-profile-form';

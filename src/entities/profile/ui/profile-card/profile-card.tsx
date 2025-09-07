@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Country, CountrySelect } from '@/entities/country';
 import { Currency, CurrencySelect } from '@/entities/currency';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { Avatar } from '@/shared/ui/avatar/avatar';
-import { Input } from '@/shared/ui/input/input';
-import { Loader } from '@/shared/ui/loader/loader';
+import { Avatar } from '@/shared/ui/avatar';
+import { Input } from '@/shared/ui/input';
+import { Loader } from '@/shared/ui/loader';
 import { HStack, VStack } from '@/shared/ui/stack';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/text/text';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/text';
 
 import { Profile } from '../../model/types/profile';
 

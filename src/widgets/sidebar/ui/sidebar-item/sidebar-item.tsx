@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 
 import { getUserAuthData } from '@/entities/user';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
-import { AppLink, AppLinkTheme } from '@/shared/ui/app-link/app-link';
+import { AppIcon, IconTheme } from '@/shared/ui/app-icon';
+import { AppLink, AppLinkTheme } from '@/shared/ui/app-link';
 import { HStack } from '@/shared/ui/stack';
 
 import { SidebarItemType } from '../../model/types/sidebar-items';

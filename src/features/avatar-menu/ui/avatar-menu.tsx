@@ -6,7 +6,7 @@ import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/user';
 import { RoutePath } from '@/shared/consts/router';
-import { Avatar } from '@/shared/ui/avatar/avatar';
+import { Avatar } from '@/shared/ui/avatar';
 import { Dropdown } from '@/shared/ui/popups';
 
 interface AvatarMenuProps {

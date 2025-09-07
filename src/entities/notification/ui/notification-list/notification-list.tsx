@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { getUserAuthData } from '@/entities/user';
-import { Skeleton } from '@/shared/ui/skeleton/skeleton';
+import { Skeleton } from '@/shared/ui/skeleton';
 import { VStack } from '@/shared/ui/stack';
 
 import { useGetNotificationsQuery } from '../../api/notification-api';

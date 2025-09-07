@@ -3,8 +3,8 @@ import { memo } from 'react';
 import { Theme, useTheme } from '@/app/providers/theme';
 import MoonIcon from '@/shared/assets/icons/moon.svg';
 import SunIcon from '@/shared/assets/icons/sun.svg';
-import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
-import { Button, ButtonTheme } from '@/shared/ui/button/button';
+import { AppIcon, IconTheme } from '@/shared/ui/app-icon';
+import { Button, ButtonTheme } from '@/shared/ui/button';
 
 interface ThemeSwitcherProps {
     className?: string;

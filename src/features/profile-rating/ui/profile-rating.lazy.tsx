@@ -1,6 +1,6 @@
 import { FC, lazy, Suspense } from 'react';
 
-import { Skeleton } from '@/shared/ui/skeleton/skeleton';
+import { Skeleton } from '@/shared/ui/skeleton';
 
 import { ProfileRatingProps } from './profile-rating';
 

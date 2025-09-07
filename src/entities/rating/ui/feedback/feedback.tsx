@@ -2,12 +2,12 @@ import { memo, useCallback, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@/shared/ui/button/button';
-import { Drawer } from '@/shared/ui/drawer/drawer';
-import { Input } from '@/shared/ui/input/input';
-import { Modal } from '@/shared/ui/modal/modal';
+import { Button } from '@/shared/ui/button';
+import { Drawer } from '@/shared/ui/drawer';
+import { Input } from '@/shared/ui/input';
+import { Modal } from '@/shared/ui/modal';
 import { HStack, VStack } from '@/shared/ui/stack';
-import { Text } from '@/shared/ui/text/text';
+import { Text } from '@/shared/ui/text';
 
 interface FeedbackProps {
     className?: string;

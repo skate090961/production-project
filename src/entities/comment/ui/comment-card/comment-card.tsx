@@ -2,10 +2,10 @@ import { memo } from 'react';
 
 import { RoutePath } from '@/shared/consts/router';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { AppLink } from '@/shared/ui/app-link/app-link';
-import { Avatar } from '@/shared/ui/avatar/avatar';
-import { Skeleton } from '@/shared/ui/skeleton/skeleton';
-import { Text, TextSize } from '@/shared/ui/text/text';
+import { AppLink } from '@/shared/ui/app-link';
+import { Avatar } from '@/shared/ui/avatar';
+import { Skeleton } from '@/shared/ui/skeleton';
+import { Text, TextSize } from '@/shared/ui/text';
 
 import { Comment } from '../../model/types/comment';
 

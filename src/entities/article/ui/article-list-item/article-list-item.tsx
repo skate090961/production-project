@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { RoutePath } from '@/shared/consts/router';
 import { classNames } from '@/shared/lib/class-names/class-names';
-import { AppIcon, IconTheme } from '@/shared/ui/app-icon/app-icon';
-import { AppLink } from '@/shared/ui/app-link/app-link';
-import { Avatar } from '@/shared/ui/avatar/avatar';
-import { Button, ButtonTheme } from '@/shared/ui/button/button';
-import { Card } from '@/shared/ui/card/card';
+import { AppIcon, IconTheme } from '@/shared/ui/app-icon';
+import { AppLink } from '@/shared/ui/app-link';
+import { Avatar } from '@/shared/ui/avatar';
+import { Button, ButtonTheme } from '@/shared/ui/button';
+import { Card } from '@/shared/ui/card';
 import { HStack, VStack } from '@/shared/ui/stack';
-import { Text } from '@/shared/ui/text/text';
+import { Text } from '@/shared/ui/text';
 
 import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,

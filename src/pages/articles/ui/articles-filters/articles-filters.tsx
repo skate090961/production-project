@@ -9,10 +9,10 @@ import { ArticlesViewSelector } from '@/features/articles-view-selector';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { SortOrder } from '@/shared/types';
-import { Card } from '@/shared/ui/card/card';
-import { Input } from '@/shared/ui/input/input';
+import { Card } from '@/shared/ui/card';
+import { Input } from '@/shared/ui/input';
 import { HStack, VStack } from '@/shared/ui/stack';
-import { TabItem } from '@/shared/ui/tabs/tabs';
+import { TabItem } from '@/shared/ui/tabs';
 
 import {
     getArticlesOrder, getArticlesSearch, getArticlesSort, getArticlesType, getArticlesView,

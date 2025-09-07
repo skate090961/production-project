@@ -5,7 +5,7 @@ import { ArticleList } from '@/entities/article';
 import { fetchArticleRecommendations } from '@/pages/article-details';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { VStack } from '@/shared/ui/stack';
-import { Text, TextSize } from '@/shared/ui/text/text';
+import { Text, TextSize } from '@/shared/ui/text';
 
 import { useArticleRecommendationsList } from '../../api/ArticleRecommendationsApi';
 

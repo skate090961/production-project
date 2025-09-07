@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Select } from '@/shared/ui/select/select';
+import { Select } from '@/shared/ui/select';
 
 import { Country } from '../../model/types/country';
 

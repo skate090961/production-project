@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Card } from '@/shared/ui/card/card';
+import { Card } from '@/shared/ui/card';
 import { VStack } from '@/shared/ui/stack';
-import { StarRating } from '@/shared/ui/star-rating/star-rating';
-import { Text } from '@/shared/ui/text/text';
+import { StarRating } from '@/shared/ui/star-rating';
+import { Text } from '@/shared/ui/text';
 
 import { Feedback } from '../feedback/feedback';
 

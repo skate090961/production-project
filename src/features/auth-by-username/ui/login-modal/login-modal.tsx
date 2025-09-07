@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 
-import { Loader } from '@/shared/ui/loader/loader';
-import { Modal } from '@/shared/ui/modal/modal';
+import { Loader } from '@/shared/ui/loader';
+import { Modal } from '@/shared/ui/modal';
 
 import { LoginFormLazy } from '../login-form/login-form.lazy';
 

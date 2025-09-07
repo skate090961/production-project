@@ -1,4 +1,4 @@
-import { Loader } from '@/shared/ui/loader/loader';
+import { Loader } from '@/shared/ui/loader';
 import { Page } from '@/widgets/page';
 
 import styles from './page-loader.module.scss';
