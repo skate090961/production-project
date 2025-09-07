@@ -6,7 +6,7 @@ import { getUserAuthData } from '@/entities/user';
 import { LoginModal } from '@/features/auth-by-username';
 import { AvatarMenu } from '@/features/avatar-menu';
 import { NotificationsButton } from '@/features/notifications-button';
-import { RoutePath } from '@/shared/consts/router';
+import { getRouteArticleCreate } from '@/shared/consts/router';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { AppLink, AppLinkTheme } from '@/shared/ui/app-link';
 import { Button, ButtonTheme } from '@/shared/ui/button';
@@ -44,7 +44,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 />
                 <HStack justify="between" maxWidth>
                     <AppLink
-                        to={RoutePath.article_create}
+                        to={getRouteArticleCreate()}
                         theme={AppLinkTheme.SECONDARY}
                     >
                         {t('Создать статью')}

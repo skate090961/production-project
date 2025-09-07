@@ -2,7 +2,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import EyeIcon from '@/shared/assets/icons/eye.svg';
-import { RoutePath } from '@/shared/consts/router';
+import { getRouteArticleDetails } from '@/shared/consts/router';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { AppIcon, IconTheme } from '@/shared/ui/app-icon';
 import { AppLink } from '@/shared/ui/app-link';
@@ -50,7 +50,7 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
         </HStack>
     );
 
-    const articlePath = `${RoutePath.article_details}${article.id}`;
+    const articlePath = getRouteArticleDetails(article.id);
 
     if (view === ArticleView.LIST) {
         const textBlock = article.blocks.find(

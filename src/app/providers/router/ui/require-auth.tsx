@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 
 import { getUserAuthData } from '@/entities/user';
-import { RoutePath } from '@/shared/consts/router';
+import { getRouteMain } from '@/shared/consts/router';
 
 export const RequireAuth = ({ children }: {children: ReactElement}): ReactElement => {
     const auth = useSelector(getUserAuthData);
@@ -12,7 +12,7 @@ export const RequireAuth = ({ children }: {children: ReactElement}): ReactElemen
     if (!auth) {
         return (
             <Navigate
-                to={RoutePath.main}
+                to={getRouteMain()}
                 state={{ from: location }}
                 replace
             />

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 
-import { RoutePath } from '@/shared/consts/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/consts/router';
 import { Button, ButtonTheme } from '@/shared/ui/button';
 import { HStack } from '@/shared/ui/stack';
 
@@ -20,11 +20,11 @@ export const ArticleDetailsHeader = memo(({ className, id }: ArticleDetailsHeade
     const canEdit = useSelector(getCanEditArticle);
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(`${RoutePath.articles}/${id}/edit`);
+        navigate(getRouteArticleEdit(id));
     }, [id, navigate]);
 
     return (

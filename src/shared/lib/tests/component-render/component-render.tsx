@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { StateSchema, StoreProvider } from '@/app/providers/store-provider';
 import i18nForTests from '@/shared/config/i18n/i18n-for-tests';
-import { AppRoutes, RoutePath } from '@/shared/consts/router';
+import { getRouteMain } from '@/shared/consts/router';
 
 interface ComponentRenderOptions {
     route?: string;
@@ -18,7 +18,7 @@ export const componentRender = (
     options: ComponentRenderOptions = {},
 ) => {
     const {
-        route = RoutePath[AppRoutes.MAIN],
+        route = getRouteMain(),
         initState,
     } = options;
 
