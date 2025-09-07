@@ -5,7 +5,7 @@ import ArticlesIcon from '@/shared/assets/icons/articles.svg';
 import HomeIcon from '@/shared/assets/icons/home.svg';
 import TeamIcon from '@/shared/assets/icons/team.svg';
 import UserIcon from '@/shared/assets/icons/user.svg';
-import { AppRoutes, RoutePath } from '@/shared/config/route/route-config';
+import { AppRoutes, RoutePath } from '@/shared/consts/router';
 
 import { SidebarItemType } from '../types/sidebar-items';
 
