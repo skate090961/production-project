@@ -3,8 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import {
-    ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView,
+    ArticleSortField,
+    ArticleType,
+    ArticleView,
 } from '@/entities/article';
+import { ArticleSortSelector } from '@/features/article-sort-selector';
+import { ArticleTypeTabs } from '@/features/article-type-tabs';
 import { ArticlesViewSelector } from '@/features/articles-view-selector';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
