@@ -30,7 +30,13 @@ export const AvatarMenu = memo(({ className }: AvatarMenuProps) => {
         <Dropdown
             className={className}
             direction="bottomLeft"
-            trigger={<Avatar size={35} src={authData?.avatar} />}
+            trigger={(
+                <Avatar
+                    fallbackInverted
+                    size={35}
+                    src={authData?.avatar}
+                />
+            )}
             items={[
                 ...(isAdminPanelAvailable ? [
                     {

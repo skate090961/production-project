@@ -1,7 +1,11 @@
 import { CSSProperties, memo, useMemo } from 'react';
 
-import AvatarIcon from '@/shared/assets/images/avatar.png';
+import UserFilledIcon from '@/shared/assets/icons/user-filled.svg';
 import { classNames } from '@/shared/lib/class-names/class-names';
+
+import { AppIcon, IconTheme } from '../app-icon';
+import { AppImage } from '../app-image';
+import { Skeleton } from '../skeleton';
 
 import styles from './avatar.module.scss';
 
@@ -10,6 +14,7 @@ interface AvatarProps {
     src?: string;
     size?: number;
     alt?: string;
+    fallbackInverted?: boolean;
 }
 
 export const Avatar = memo((props: AvatarProps) => {
@@ -18,6 +23,7 @@ export const Avatar = memo((props: AvatarProps) => {
         src,
         size = 100,
         alt = 'Аватар',
+        fallbackInverted,
     } = props;
 
     const inlineStyles: CSSProperties = useMemo(() => ({
@@ -25,9 +31,28 @@ export const Avatar = memo((props: AvatarProps) => {
         height: size,
     }), [size]);
 
+    const fallback = (
+        <Skeleton
+            width={size}
+            height={size}
+            className={styles.root}
+        />
+    );
+
+    const errorFallback = (
+        <AppIcon
+            width={size}
+            height={size}
+            Svg={UserFilledIcon}
+            theme={fallbackInverted ? IconTheme.PRIMARY : IconTheme.INVERTED_PRIMARY}
+        />
+    );
+
     return (
-        <img
-            src={src || AvatarIcon}
+        <AppImage
+            fallback={fallback}
+            errorFallback={errorFallback}
+            src={src}
             style={inlineStyles}
             alt={alt}
             className={classNames(styles.root, [className])}

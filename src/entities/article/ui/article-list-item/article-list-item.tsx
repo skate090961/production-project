@@ -5,15 +5,20 @@ import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { getRouteArticleDetails } from '@/shared/consts/router';
 import { classNames } from '@/shared/lib/class-names/class-names';
 import { AppIcon, IconTheme } from '@/shared/ui/app-icon';
+import { AppImage } from '@/shared/ui/app-image';
 import { AppLink } from '@/shared/ui/app-link';
 import { Avatar } from '@/shared/ui/avatar';
 import { Button, ButtonTheme } from '@/shared/ui/button';
 import { Card } from '@/shared/ui/card';
+import { Skeleton } from '@/shared/ui/skeleton';
 import { HStack, VStack } from '@/shared/ui/stack';
 import { Text } from '@/shared/ui/text';
 
 import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+    Article,
+    ArticleBlockType,
+    ArticleTextBlock,
+    ArticleView,
 } from '../../model/types/article';
 import { ArticleTextBlockUI } from '../article-text-block-ui/article-text-block-ui';
 
@@ -72,7 +77,12 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
                             <Text title={article.title} />
                             {types}
                         </div>
-                        <img src={article.img} alt={article.title} className={styles.img} />
+                        <AppImage
+                            fallback={<Skeleton height={250} />}
+                            src={article.img}
+                            alt={article.title}
+                            className={styles.img}
+                        />
                         {textBlock && (
                             <div className={styles.textBlock}>
                                 <ArticleTextBlockUI block={textBlock} />
@@ -103,7 +113,11 @@ export const ArticleListItem = memo((props: ArticleItemProps) => {
             >
                 <Card>
                     <div className={styles.imgWrapper}>
-                        <img src={article.img} alt={article.title} />
+                        <AppImage
+                            fallback={<Skeleton width={200} height={200} />}
+                            src={article.img}
+                            alt={article.title}
+                        />
                         <Text text={article.createdAt} className={styles.date} />
                     </div>
                     <HStack className={styles.info} justify="between">
